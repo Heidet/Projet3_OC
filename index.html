@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mulhouse City Bike</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/leaflet.js"></script>
+</head>
+<body> 
+    <header>  <!--header navbar-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Mulhouse City Bike</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liens</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+        </nav>
+    </header>
+
+    <section id="slider"> <!-- bloc slider -->
+        <div class="slide active">
+            <img src="img/slide1.jpg" alt="slide1"> 
+        </div>
+        <div class="slide">
+            <img src="img/slide2.jpg" alt="slide2"> 
+        </div>
+        <div class="slide">
+                <img src="img/slide3.jpg" alt="slide3"> 
+        </div>
+        <div class="previous"><i class="fa fa-chevron-left"></i></div> <!-- chevron font awesome gauche --> 
+        <div class="next"><i class="fa fa-chevron-right"></i></div><!-- chevron font awesome droit --> 
+        <!-- <div class="text-slider">
+            <h2><strong>WEBAGENCY</strong>: L'AGENCE DE TOUS <br /> VOS PROJETS !<br /></h2>
+            <p>Vous avez un projet web ? La WebAgency vous aide à le réaliser!</p>
+            <button><strong>Plus d'infos</strong></button>
+        </div> -->
+    </section>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="leaflet"></div>
+            </div>
+        </div>
+    </div>
+    <section>
+
+    </section>
+    <div class="container pt-5">
+        <p>Good</p>
+        <p>Good</p>
+        <p>Good</p>
+    </div>
+
+</body>
+</html>

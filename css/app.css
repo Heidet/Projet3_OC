@@ -1,0 +1,26 @@
+
+/**********Slider**********/
+#slider {
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+.slide.active {
+    display: block;
+}
+/*********Maps*********/
+#leaflet {
+    height: 500px; 
+}
