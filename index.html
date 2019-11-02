@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/leaflet.js"></script>
+    <script src="js/diapo.js"></script>
 </head>
 <body> 
     <header>  <!--header navbar-->
@@ -33,7 +35,6 @@
             </div>  
         </nav>
     </header>
-
     <section id="slider"> <!-- bloc slider -->
         <div class="slide active">
             <img src="img/slide1.jpg" alt="slide1"> 
@@ -44,13 +45,17 @@
         <div class="slide">
                 <img src="img/slide3.jpg" alt="slide3"> 
         </div>
-        <div class="previous"><i class="fa fa-chevron-left"></i></div> <!-- chevron font awesome gauche --> 
-        <div class="next"><i class="fa fa-chevron-right"></i></div><!-- chevron font awesome droit --> 
-        <!-- <div class="text-slider">
-            <h2><strong>WEBAGENCY</strong>: L'AGENCE DE TOUS <br /> VOS PROJETS !<br /></h2>
-            <p>Vous avez un projet web ? La WebAgency vous aide à le réaliser!</p>
-            <button><strong>Plus d'infos</strong></button>
-        </div> -->
+        <div id="conteneur-diapo">
+                <div id="commandes">
+                    <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
+                    <a id="cmd-right" class="next" href="#" title="avancer"><span class="chevron"></span></a>
+                </div>
+                <div id="diaporama"></div>
+        </div>
+        <div class="button">
+            <button id="cmd-pause">pause</button>
+        </div>
+
     </section>
     <div class="container pt-5">
         <div class="row">
@@ -59,14 +64,15 @@
             </div>
         </div>
     </div>
-    <section>
-
+    <section id="section.test">
+        
     </section>
     <div class="container pt-5">
-        <p>Good</p>
-        <p>Good</p>
-        <p>Good</p>
+        <p>Test</p>
     </div>
+
+
+    <span class="signature">2019 - WebAgency. Réalisé par Antoine Heidet.</span>
 
 </body>
 </html>

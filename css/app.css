@@ -1,5 +1,5 @@
 
-/**********Slider**********/
+/************************Slider***************************/
 #slider {
     position: relative;
     width: 100%;
@@ -20,7 +20,67 @@
 .slide.active {
     display: block;
 }
-/*********Maps*********/
+#cmd-right {
+    right: -1.5em;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+#cmd-left {
+    left: -1.5em;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#conteneur-diapo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#commandes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    height: 88px;
+    top: 260px;
+}
+.chevron {
+    content: '';
+    display: inline-block;
+    border-style: solid;
+    border-width: 0.3em 0.3em 0 0;
+    height: 25px;
+    width: 25px;
+    color: #fff;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);    
+}
+.chevron.next {
+    float: right;
+    transform: rotate(45deg);
+}
+.chevron.previous {
+    float: left;
+}
+.next, .previous {
+    position: absolute;
+    height: 2.5em;
+    width: 5.5em;
+    border-radius: 50%/ 100% 100% 0 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button button{
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    padding: 3px 20px 3px 20px;
+}
+
+/****************************Maps*********************************/
 #leaflet {
     height: 500px; 
 }
