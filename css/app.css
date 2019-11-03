@@ -73,13 +73,36 @@
     align-items: center;
     justify-content: center;
 }
-.button button{
+.button > #cmd-pause{
     bottom: 0;
-    left: 50%;
+    left: 48%;
     position: absolute;
     padding: 3px 20px 3px 20px;
+    box-sizing: border-box;
+	display: block;
+	width: 70px;
+	height: 70px;
+	padding-top: 22px;
+	padding-left: 20px;
+	line-height: 20px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	color:#f5f5f5;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(0,0,0,0.5);
+    font-size: 30px;
+	font-weight: bold;
+	transition: all 0.3s ease;
 }
-
+body {
+	background-color: #666;	
+}
+.button:hover {
+	background-color: rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 10px rgba(255,255,100,1);
+	text-shadow: 0px 0px 10px rgba(255,255,100,1);
+}
 /****************************Maps*********************************/
 #leaflet {
     height: 500px; 

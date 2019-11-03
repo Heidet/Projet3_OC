@@ -1,26 +1,11 @@
 class GenericButton {
     constructor(elt, onClick){
-        /*
-        onClick = function(){
-            diapo.next();
-        }
-        */
         this.elt = elt;
         this._onClick = onClick;
-        /*
-        this._onClick = function(){
-        this.
-            diapo.next();
-        }
-        */
         this.elt.addEventListener('click', this.onClick.bind(this));
-        /*
-        La méthode addEventListener prend en paramètre le type d'évenement ('click') ainsi qu'une fonction anonyme (aka "callback")
-        on lui passe donc this.onClick tout en "bindant" this à l'intérieur pour qu'il soit utiliseable comme si la fonction anonyme avait été définie dans la classe.
-        sinon les appels à this n'auraient pas la bonne référence (à l'intérieur)
-
-
-        * */
+        //La méthode addEventListener prend en paramètre le type d'évenement ('click') ainsi qu'une fonction anonyme (aka "callback")
+        //on lui passe donc this.onClick tout en "bindant" this à l'intérieur pour qu'il soit utiliseable comme si la fonction anonyme avait été définie dans la classe.
+        //sinon les appels à this n'auraient pas la bonne référence (à l'intérieur)
     }
     onClick(){
         if(this._onClick){
@@ -32,20 +17,25 @@ class GenericButton {
 class PauseButton extends GenericButton {
     constructor(elt, onClick){
         super(elt, onClick)
+    }
+    setText(content){
+        this.elt.textContent = content; // element . contenu text = contenu 
+    }
+    setClass(content){ // methode changement class pour bouton 
+        this.elt.classList.forEach(function(c){ 
+            if(c.startsWith('fa-')){ // commence bien part fa- 
+                this.elt.classList.remove(c); // remove class 
+            }
+            this.elt.classList.add('fa-' + content); // add class fa plus contenu 
+        }.bind(this)); // call back this soit objet 
         /*
-        onClick = function(){
-            diapo.pause(); <-- ne marche pas #fake
-
-            this.setText("pause"); <- ce this ne marcherai sans le .bind(this)
+        while (this.elt.classList.length > 0){
+            this.elt.classList.remove(this.elt.classList.item(0));
         }
+        this.elt.classList.add('fa').add('fa-' + content);
         */
     }
-
-    setText(content){
-        this.elt.textContent = content;
-    }
 }
-
 
 window.onload = (function(){  // Exécute une fonction anonyme au chargement de la page (en gros le code dont ont à besoin)
     const diapo = { // objet diapo 
@@ -89,8 +79,18 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
                     diapo.next()
                 }
             }, 5000); // setTime
-        }
+        }   
     };
+
+    const key = document.addEventListener("keydown", function(e){
+        if(e.keyCode === 37){
+            diapo.next(); //fonction diapo et méthode next au keycode 37 
+        }
+        else if(e.keyCode === 39){
+            diapo.previous(); //fonction diapo et méthode previous au keycode 39
+        }
+    });
+
     diapo.autoplay(); // appel objet et méthode autoplay 
 
     const left_button = new GenericButton(document.getElementById('cmd-left'), function () {
@@ -100,14 +100,14 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
     const right_button = new GenericButton(document.getElementById('cmd-right'), function () {
         diapo.next();
     });
-
     const pause_button = new PauseButton(document.getElementById('cmd-pause'), function () {
         diapo.playing = !diapo.playing; // Toogle la valeur = négation de la valeur ( false=true  true=false)
         if(diapo.playing){  // si playing vrai alors pause
-            this.setText('pause');
+            this.setClass("pause"); 
         }
         else {
-            this.setText('play'); // si playing faux alors play
+            this.setClass("play");
         }
     });
 });
+ 
