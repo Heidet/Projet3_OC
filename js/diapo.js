@@ -93,11 +93,11 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
 
     diapo.autoplay(); // appel objet et méthode autoplay 
 
-    const left_button = new GenericButton(document.getElementById('cmd-left'), function () {
-       diapo.previous();
+    const left_button = new GenericButton(document.getElementById('cmd-left'), function () { // création variable bouton et attribution de son ID dans le DOM
+       diapo.previous(); 
     });
 
-    const right_button = new GenericButton(document.getElementById('cmd-right'), function () {
+    const right_button = new GenericButton(document.getElementById('cmd-right'), function () { // création variable bouton et attribution de son ID dans le DOM
         diapo.next();
     });
     const pause_button = new PauseButton(document.getElementById('cmd-pause'), function () {

@@ -107,3 +107,6 @@ body {
 #leaflet {
     height: 500px; 
 }
+.container {
+    margin-left: 30px; 
+}
