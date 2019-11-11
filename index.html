@@ -74,45 +74,44 @@
         <div class="conteneur row">
             <div id="leaflet" class="col-lg-9">
             </div>
-                <aside class="formulaire" id="station">
-                        <div id="searchStation">
-                                <p>Saisir une rue :</p>
-                                <input id="pac-input" class="controls" type="text" placeholder="Rechercher ..."> 
+            <aside id="station">
+
+                        <div id="infos-station">
+                            <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="header-station">Station sélectionnée</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="station-titre">Status</td>
+                                    <td id="station-status"><span></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="station-titre">Nom</td>
+                                    <td id="station-nom"></td>
+                                </tr>
+                                <tr>
+                                    <td class="station-titre">Adresse</td>
+                                    <td id="station-adresse"></td>
+                                </tr>
+                                <tr>
+                                    <td class="station-titre">Capacité d'accueil</td>
+                                    <td id="station-capacite"></td>
+                                </tr>
+                                <tr>
+                                    <td class="station-titre">Vélo disponible</td>
+                                    <td id="station-dispo"><span></span></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <div id="reserver">
+                                <input type="submit" id="btn-reserv" class="btn" value="Réserver">
+                            </div>
                         </div>
-                                        <div id="infos-station">
-                                            <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th colspan="2" class="header-station">Station sélectionnée</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="station-titre">Status</td>
-                                                    <td id="station-status"><span></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="station-titre">Nom</td>
-                                                    <td id="station-nom"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="station-titre">Adresse</td>
-                                                    <td id="station-adresse"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="station-titre">Capacité d'accueil</td>
-                                                    <td id="station-capacite"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="station-titre">Vélo disponible</td>
-                                                    <td id="station-dispo"><span></span></td>
-                                                </tr>
-                                            </tbody>
-                                            </table>
-                                            <div id="reserver">
-                                                <input type="submit" id="btn-reserv" class="btn" value="Réserver">
-                                            </div>
-                                        </div>
+                    </div><!-- div#adresse -->
+
                 </aside>
         </div>
     </div>
@@ -131,7 +130,8 @@
     <script src="js/diapo.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet.markercluster.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/map.js"></script>
     <script src="js/ajax.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

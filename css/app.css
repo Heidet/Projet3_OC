@@ -112,6 +112,11 @@
 #leaflet {
     height: 500px; 
 }
+.conteneur {
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
 
 /******************form ******************/
 

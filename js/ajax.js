@@ -42,11 +42,3 @@ class ApiClient {
         new Request(callback).get(`https://api.jcdecaux.com/vls/v1/stations?contract=${this.contractName}&apiKey=${this.apiKey}`)
     }
 }
-const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
-api.getStations(function(datas){
-    datas = JSON.parse(datas); // transformer le JSON en objet
-    datas.forEach(function(data){ // parcourir objet appel function callback data 
-        let position = data['position']; // position callback 
-        let marker = L.marker([position['lat'], position['lng']]).addTo(map); // intégration lat + lng sur maps . 
-    });
-});
