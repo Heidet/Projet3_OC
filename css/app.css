@@ -20,6 +20,14 @@
 .slide.active {
     display: block;
 }
+.text-slider {
+    padding: 15px 15px 15px 15px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color: white;
+}
 #cmd-right {
     right: -1.5em;
     -webkit-transform: rotate(-90deg);
@@ -104,6 +112,9 @@
 #leaflet {
     height: 500px; 
 }
+
+/******************form ******************/
+
 /************** makerCluster *****************/ 
 .mycluster {
     height: 40px;

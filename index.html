@@ -35,14 +35,29 @@
     </header>
     <section id="slider"> <!-- bloc slider -->
         <div class="slide active">
-            <img src="img/slide1.jpg" alt="slide1"> 
+                <img src="img/slide1.jpg" alt="slide1">
+            <div class="text-slider">
+                <h2>Slide 1</h2> 
+                <p>Test</p>
+            </div>
         </div>
+
         <div class="slide">
-            <img src="img/slide2.jpg" alt="slide2"> 
+                <img src="img/slide2.jpg" alt="slide2"> 
+            <div class="text-slider">
+                <h2>Slide 2</h2> 
+                <p>Test</p>
+            </div>
         </div>
+
         <div class="slide">
                 <img src="img/slide3.jpg" alt="slide3"> 
+            <div class="text-slider">
+                <h2>Slide 3</h2> 
+                <p>Test</p>
+            </div>
         </div>
+
         <div id="conteneur-diapo">
                 <div id="commandes">
                     <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
@@ -56,12 +71,52 @@
 
     </section>
     <div class="container-fluid pt-5">
-        <div class="row">
-            <div class="col-md-9">
-                <div id="leaflet"></div>
+        <div class="conteneur row">
+            <div id="leaflet" class="col-lg-9">
             </div>
+                <aside class="formulaire" id="station">
+                        <div id="searchStation">
+                                <p>Saisir une rue :</p>
+                                <input id="pac-input" class="controls" type="text" placeholder="Rechercher ..."> 
+                        </div>
+                                        <div id="infos-station">
+                                            <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" class="header-station">Station sélectionnée</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="station-titre">Status</td>
+                                                    <td id="station-status"><span></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="station-titre">Nom</td>
+                                                    <td id="station-nom"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="station-titre">Adresse</td>
+                                                    <td id="station-adresse"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="station-titre">Capacité d'accueil</td>
+                                                    <td id="station-capacite"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="station-titre">Vélo disponible</td>
+                                                    <td id="station-dispo"><span></span></td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                            <div id="reserver">
+                                                <input type="submit" id="btn-reserv" class="btn" value="Réserver">
+                                            </div>
+                                        </div>
+                </aside>
         </div>
     </div>
+
     <section id="section.test">
         
     </section>
