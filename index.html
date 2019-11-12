@@ -37,24 +37,21 @@
         <div class="slide active">
                 <img src="img/slide1.jpg" alt="slide1">
             <div class="text-slider">
-                <h2>Slide 1</h2> 
-                <p>Test</p>
+                <h2>Bienvenue sur l'application Mulhouse City Bike</h2> 
             </div>
         </div>
 
         <div class="slide">
                 <img src="img/slide2.jpg" alt="slide2"> 
             <div class="text-slider">
-                <h2>Slide 2</h2> 
-                <p>Test</p>
+                <h2>Location de vélos en temps réel sur Mulhouse</h2> 
             </div>
         </div>
 
         <div class="slide">
                 <img src="img/slide3.jpg" alt="slide3"> 
             <div class="text-slider">
-                <h2>Slide 3</h2> 
-                <p>Test</p>
+                <h2>Trouver votre vélo sur la carte et remplissez le formulaire étapes par étapes</h2> 
             </div>
         </div>
 
@@ -71,48 +68,24 @@
 
     </section>
     <div class="container-fluid pt-5">
-        <div class="conteneur row">
+        <div class="conteneur row ">
             <div id="leaflet" class="col-lg-9">
             </div>
-            <aside id="station">
+            <div id="station" class="col-lg-3"> <!-- Cadre informations sur la station sélectionnée -->
+                <h3>Information Station :</h3>
+                <ul id="infostation">
+                    <li>Nom : <span id="station-name"></span></li>
+                    <li>Adresse : <span id="adresse-station"></span></li>
+                    <li>Etat : <span id="etat-station"></span></li>
+                    <li>Vélos disponibles : <span id="dispo"></span></li>
+                    <li>Capacité disponibles : <span id="capacity"></span></li>
+                </ul>
+                <!-- /Informations sur la station sélectionnée -->
 
-                        <div id="infos-station">
-                            <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="header-station">Station sélectionnée</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="station-titre">Status</td>
-                                    <td id="station-status"><span></span></td>
-                                </tr>
-                                <tr>
-                                    <td class="station-titre">Nom</td>
-                                    <td id="station-nom"></td>
-                                </tr>
-                                <tr>
-                                    <td class="station-titre">Adresse</td>
-                                    <td id="station-adresse"></td>
-                                </tr>
-                                <tr>
-                                    <td class="station-titre">Capacité d'accueil</td>
-                                    <td id="station-capacite"></td>
-                                </tr>
-                                <tr>
-                                    <td class="station-titre">Vélo disponible</td>
-                                    <td id="station-dispo"><span></span></td>
-                                </tr>
-                            </tbody>
-                            </table>
-                            <div id="reserver">
-                                <input type="submit" id="btn-reserv" class="btn" value="Réserver">
-                            </div>
-                        </div>
-                    </div><!-- div#adresse -->
+                <div id="streetView"></div> <!-- Div vue Street View -->
 
-                </aside>
+                <div id="bouttonReservation"><button>Réserver</button></div> <!-- Bouton de réservation -->
+             </div> <!-- /Cadre informations sur la station sélectionnée -->
         </div>
     </div>
 
@@ -127,11 +100,14 @@
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/station.js"></script>
     <script src="js/diapo.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet.markercluster.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/ajax.js"></script>
+    <script src="js/map.js"></script>
     <script src="js/main.js"></script>
+    
+
 </body>
 </html>

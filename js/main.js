@@ -70,15 +70,4 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
             this.setClass("play");
         }
     });
-    const map = new Map (47.7475, 7.3375, 14)
-    const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
-        api.getStations(function(datas){
-        datas = JSON.parse(datas); // transformer le JSON en objet
-        datas.forEach(function(data){ // parcourir objet appel function callback data 
-            let position = data['position']; // position callback 
-            map.addMarker(position, () => {
-                console.log(data)
-            })
-        });
-});
 });

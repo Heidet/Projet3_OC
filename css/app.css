@@ -27,6 +27,8 @@
     top: 30%;
     left: 15%;
     color: white;
+    box-shadow: 2px 2px 8px 1px rgba(255,255,255,.25);
+    border-radius: 13px;
 }
 #cmd-right {
     right: -1.5em;
