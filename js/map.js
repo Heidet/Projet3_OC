@@ -13,7 +13,6 @@ class Map {
         marker.addTo(this.instance);
    }
 }
-
 // Objet Station
 const Station = {
     nom : null, 
