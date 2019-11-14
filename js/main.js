@@ -71,3 +71,39 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
         }
     });
 });
+
+    let icon_vert = L.icon({
+        iconUrl: 'css/images/marker-icon.png',
+        iconSize: [25, 41], //taille icone
+        iconAnchor: [13, 41], // ou va la pointe 
+    });
+    let icon_rouge = L.icon({
+        iconUrl: 'css/images/marker-icon-rouge.png',
+        iconSize: [25, 41],
+        iconAnchor: [13, 41],
+    });
+    let icon_jaune = L.icon({
+        iconUrl: 'css/images/marker-jaune.png',
+        iconSize: [25, 41], //taille icone
+        iconAnchor: [13, 41],
+    });
+
+const map = new Map (47.7475, 7.3375, 14)
+const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
+    api.getStations(function(datas){
+    datas = JSON.parse(datas); // transformer le JSON en objet
+    datas.forEach(function(data){ // parcourir objet appel function callback data 
+        let position = data['position']; // position callback 
+        map.addMarker(position, () => {
+
+            let station = new Station (
+                data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
+            );
+            // Apparition du bloc contenant les infos de la station sélectionnée
+            document.getElementById("infostation").style.display = "block";
+
+            // Insertion des données dans le bloc
+            station.showStation();
+        });
+    });
+});
