@@ -71,3 +71,22 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
         }
     });
 });
+const map = new Map (47.7475, 7.3375, 14)
+const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
+    api.getStations(function(datas){
+    datas = JSON.parse(datas); // transformer le JSON en objet
+    datas.forEach(function(data){ // parcourir objet appel function callback data 
+        let position = data['position']; // position callback
+        L.marker(position, () => {
+            // Insertion des données dans l'objet "station"
+            let station = new Station (
+                data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
+            );
+            // Apparition du bloc contenant les infos de la station sélectionnée
+            document.getElementById("infostation").style.display = "block";
+
+            // Insertion des données dans le bloc
+            station.showStation();
+        }, {icon: orangeIcon}).addTo(map);
+    });
+});
