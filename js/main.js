@@ -71,7 +71,6 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
         }
     });
 });
-<<<<<<< HEAD
 
     let icon_vert = L.icon({
         iconUrl: 'css/images/marker-icon.png',
@@ -89,22 +88,18 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
         iconAnchor: [13, 41],
     });
 
-=======
->>>>>>> b5d374141c151871885c0fb8150add4e2e0af8af
+
+
 const map = new Map (47.7475, 7.3375, 14)
 const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
     api.getStations(function(datas){
     datas = JSON.parse(datas); // transformer le JSON en objet
     datas.forEach(function(data){ // parcourir objet appel function callback data 
-<<<<<<< HEAD
+
         let position = data['position']; // position callback 
         map.addMarker(position, () => {
-
-=======
-        let position = data['position']; // position callback
-        L.marker(position, () => {
             // Insertion des données dans l'objet "station"
->>>>>>> b5d374141c151871885c0fb8150add4e2e0af8af
+
             let station = new Station (
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
             );
@@ -113,12 +108,7 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
 
             // Insertion des données dans le bloc
             station.showStation();
-<<<<<<< HEAD
         });
     });
 });
-=======
-        }, {icon: orangeIcon}).addTo(map);
-    });
-});
->>>>>>> b5d374141c151871885c0fb8150add4e2e0af8af
+
