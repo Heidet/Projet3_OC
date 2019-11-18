@@ -13,4 +13,3 @@ class Map {
         marker.addTo(this.instance);
    }
 }
-

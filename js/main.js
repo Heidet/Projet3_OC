@@ -8,7 +8,7 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
             return this.slides().length; // retour nombre de slide '3'
         },
         index: function(){
-            for (let i = 0; i < this.length(); i++) { // boucle for incrémention de 1 tant que longeur 
+            for (let i = 0; i < this.length(); i++) { // boucle for incrémention de 1 tant que longeur non atteinte
                 let slide = this.slides()[i]; // indice slide diapo 
                 if (slide.classList.contains('active')) { // si slide contient la class active 
                     return i;
@@ -72,23 +72,6 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
     });
 });
 
-    let icon_vert = L.icon({
-        iconUrl: 'css/images/marker-icon.png',
-        iconSize: [25, 41], //taille icone
-        iconAnchor: [13, 41], // ou va la pointe 
-    });
-    let icon_rouge = L.icon({
-        iconUrl: 'css/images/marker-icon-rouge.png',
-        iconSize: [25, 41],
-        iconAnchor: [13, 41],
-    });
-    let icon_jaune = L.icon({
-        iconUrl: 'css/images/marker-jaune.png',
-        iconSize: [25, 41], //taille icone
-        iconAnchor: [13, 41],
-    });
-
-
 
 const map = new Map (47.7475, 7.3375, 14)
 const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
@@ -99,16 +82,35 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
         let position = data['position']; // position callback 
         map.addMarker(position, () => {
             // Insertion des données dans l'objet "station"
-
-            let station = new Station (
+            let station = new Formulaire (
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
             );
+            let iconMarqueur = 
             // Apparition du bloc contenant les infos de la station sélectionnée
             document.getElementById("infostation").style.display = "block";
 
             // Insertion des données dans le bloc
             station.showStation();
+            
+            // changement icon si stations ouvert/close
+            station.iconMarqueur();
         });
     });
 });
+
+/*   let icon_vert = L.icon({
+    iconUrl: 'css/images/marker-icon.png',
+    iconSize: [25, 41], //taille icone
+    iconAnchor: [13, 41], // ou va la pointe 
+});
+let icon_rouge = L.icon({
+    iconUrl: 'css/images/marker-icon-rouge.png',
+    iconSize: [25, 41],
+    iconAnchor: [13, 41],
+});
+let icon_jaune = L.icon({
+    iconUrl: 'css/images/marker-jaune.png',
+    iconSize: [25, 41], //taille icone
+    iconAnchor: [13, 41],
+}); **/
 
