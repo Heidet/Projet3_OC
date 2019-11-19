@@ -80,25 +80,28 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
     datas.forEach(function(data){ // parcourir objet appel function callback data 
 
         let position = data['position']; // position callback 
-        map.addMarker(position, () => {
+        map.addMarker(position, () => {  //ajout marker
             // Insertion des données dans l'objet "station"
             let station = new Formulaire (
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
             );
-            let iconMarqueur = 
             // Apparition du bloc contenant les infos de la station sélectionnée
             document.getElementById("infostation").style.display = "block";
 
             // Insertion des données dans le bloc
-            station.showStation();
-            
-            // changement icon si stations ouvert/close
-            station.iconMarqueur();
+            station.showStation(); 
+
+            document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function(){ // recupération button + add evenement click function 
+                // Insertion du nom de la station
+                document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
+                
+                document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
+            });
         });
     });
 });
 
-/*   let icon_vert = L.icon({
+/*  let icon_vert = L.icon({
     iconUrl: 'css/images/marker-icon.png',
     iconSize: [25, 41], //taille icone
     iconAnchor: [13, 41], // ou va la pointe 

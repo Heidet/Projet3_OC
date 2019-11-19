@@ -213,3 +213,8 @@
     margin-top: -20px;
     margin-left: -20px;
 }
+/************************** Canvas ************************/ 
+#containerCanvas {
+    margin: 20px auto;
+    display: none;
+}

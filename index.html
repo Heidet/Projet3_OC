@@ -84,16 +84,21 @@
 
                 <div id="streetView"></div> <!-- Div vue Street View -->
 
-                <div id="bouttonReservation"><button>Réserver</button></div> <!-- Bouton de réservation -->
+                <div id="bouttonReserver"><button>Réserver</button></div> <!-- Bouton de réservation -->
              </div> <!-- /Cadre informations sur la station sélectionnée -->
         </div>
     </div>
 
     <section id="inscription">
-            <canvas id="canvas" width="300" height="300">
-                   
-            </canvas>
-        
+        <div id="containerCanvas">
+                <p>Votre réservation de vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
+
+                <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
+                <div id="boutonCanvas">
+                    <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
+                    <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
+                </div>
+        </div> <!--signature -->
     </section>
     <div class="container pt-5">
     </div>
@@ -110,5 +115,6 @@
     <script src="js/ajax.js"></script>
     <script src="js/map.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/reservation.js"></script>
 </body>
 </html>
