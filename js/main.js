@@ -39,7 +39,7 @@ window.onload = (function(){  // Exécute une fonction anonyme au chargement de 
                 if(diapo.playing){ // si playing vrai alors utilisation méthode next 
                     diapo.next()
                 }
-            }, 5000); // setTime
+            }, 5000); // setTime 5 secondes 
         }   
     };
 
@@ -100,6 +100,8 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
                 document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
                 
                 document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
+
+                document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
 
                 //document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
 

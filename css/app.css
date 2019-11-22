@@ -112,23 +112,24 @@
 }
 /****************************Maps*********************************/
 #leaflet {
-    height: 500px; 
+    height: 550px; 
 }
 .conteneur {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    align-items: center;
 }
-
 /******************form ******************/
 #station {
     display: block;
+}
+
+#infostation > li {
+    margin: 10px auto;
 }
 /************************** Canvas ************************/ 
 #containerCanvas {
     margin: 20px auto;
     display: none;
-    text-align: center;
 }
 #signature {
     display: block;
@@ -150,12 +151,21 @@
     color: red; 
 }
 #compteur, p {
-    display: inline-block;
     margin-left: 10px;
 }
 /************************** annulation ************************/ 
 .messageAnnulation {
     display: none;
+}
+#annulerCompteur {
+    border: none;
+    background-color:#ca433c;
+    border-bottom: 3px solid#BB4A44;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
 }
 /************************** signature ************************/ 
 .signature {

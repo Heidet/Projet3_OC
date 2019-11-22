@@ -121,6 +121,9 @@ class Signature {
         this.ctx.lineWidth = 3;
     }
 }
-
 let obj = new Signature();
 obj.evenements();
+
+document.getElementById("boutonEffacer").addEventListener("click", function() {
+    Signature.clearCanvas();
+});

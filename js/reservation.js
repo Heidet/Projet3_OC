@@ -1,6 +1,7 @@
 class Compteur { 
     constructor() {// objet compteur
         this.seconds = 0; // secondes du compteur
+        this.station = null; //attribue station pour stockage 
     }
         show(){ // permet d'afficher en mode h:m:s les secondes restantes
             let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
@@ -25,9 +26,9 @@ class Compteur {
         }
 
         interval = setInterval(function(){ // permet de décrémenter le temps restant
-            if(this.seconds > 0){ 
+            if(this.seconds > 0){ // si objet seconde supérieur à 0 alors -->>>>
                 this.seconds--; // décrémentation de 1 
-                this.show(); // lancement méthode show. 
+                this.show(); // lancement méthode show compteur 
             }
         }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
 
@@ -38,6 +39,8 @@ class Compteur {
         stopCompteur () {
             // Arrêt du compte à rebours
             clearInterval();  
+            // Supprimer toutes les données de sessionStorage
+            sessionStorage.clear();
             // display none section inscription/canvas 
             document.getElementById("inscription").style.display = "none"; 
             // affichage section message annulation 
@@ -64,7 +67,7 @@ let compteur = new Compteur();  // on initialise un nouveau compteur
 
 document.getElementById('boutonValider').addEventListener('click', function(){  // au click sur le bouton
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
-    compteur.demarrer(1200); // on initialise un nouveau décompte
+    compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
 });
 // Evénement lors du clique sur le bouton d'annulation d'une réservation
 document.getElementById("annulerCompteur").addEventListener("click", function() {

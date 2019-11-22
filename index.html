@@ -72,9 +72,9 @@
             <div class="conteneur row ">
                 <div id="leaflet" class="col-lg-9">
                 </div>
-                <div id="station" class="col-lg-3"> <!-- Cadre informations sur la station sélectionnée -->
-                    <h3>Information Station :</h3>
-                    <ul id="infostation">
+                <div id="station" class="col-lg-3 pt-5"> <!-- Cadre informations sur la station sélectionnée -->
+                    <h3 class="titre-form text-center">Information Station :</h3>
+                    <ul id="infostation" class="pt-3"> 
                         <li>Nom : <span id="station-name"></span></li>
                         <li>Adresse : <span id="adresse-station"></span></li>
                         <li>Etat : <span id="etat-station"></span></li>
@@ -83,16 +83,16 @@
                     </ul>
                     <!-- /Informations sur la station sélectionnée -->
 
-                    <div id="bouttonReserver"><button>Réserver</button></div> <!-- Bouton de réservation -->
+                    <div id="bouttonReserver" class="reserver pt-5 text-center"><button>Réserver</button></div> <!-- Bouton de réservation -->
                 </div> <!-- /Cadre informations sur la station sélectionnée -->
             </div>
         </div>
     </section>
 
     <section id="inscription" class="container pt-3">
-        <div id="containerCanvas">
+        <div id="containerCanvas" class="text-center">
                 <p>Votre réservation de vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
-                <p>Adresse : <span><!-- insertion adresse station JS --> </span></p>
+                <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
 
                 <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
                 <div id="boutonCanvas">
@@ -103,6 +103,7 @@
         
         <div id="decompte"> 
             <p>Vous avez reservé un vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
+            <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
             
             <article id="reservation">
                 <p>Pour une durée de : <div id="compteur"></div></p> <!-- compteur de réservation -->
