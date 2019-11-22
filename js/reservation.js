@@ -1,42 +1,73 @@
-class Compteur { // objet compteur
-    seconds = 0; // secondes du compteur
-
-    show(){ // permet d'afficher en mode h:m:s les secondes restantes
-        let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
-
-        if(h.length === 1){ // si la longeur de h ne possède que 1 unité 
-            h = '0' + h; // alors on rajoute un 0 avant h
-        }
-
-        let m = (Math.floor((this.seconds % 3600) / 60)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
-
-        if(m.length === 1){
-            m = '0' + m;
-        }
-
-        let s = (this.seconds % 60).toString(); //
-
-        if(s.length === 1){
-            s = '0' + s;
-        }
-
-        document.getElementById('compteur').innerText = h + ':' + m + ':' + s; //Formatage text h m s
+class Compteur { 
+    constructor() {// objet compteur
+        this.seconds = 0; // secondes du compteur
     }
+        show(){ // permet d'afficher en mode h:m:s les secondes restantes
+            let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
 
-    interval = setInterval(function(){ // permet de décrémenter le temps restant
-        if(this.seconds > 0){ 
-            this.seconds--; // décrémentation de 1 
-            this.show(); // lancement méthode show. 
+            if(h.length === 1){ // si la longeur de h ne possède que 1 unité 
+                h = '0' + h; // alors on rajoute un 0 avant h
+            }
+
+            let m = (Math.floor((this.seconds % 3600) / 60)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
+
+            if(m.length === 1){  // si longueur de m strictement égale à 1 alors 
+                m = '0' + m; // alors ajoute de 0 devant m . m deviens 0 + valeurs (m)
+            }
+
+            let s = (this.seconds % 60).toString(); //
+
+            if(s.length === 1){
+                s = '0' + s;
+            }
+
+            document.getElementById('compteur').innerText = h + ':' + m + ':' + s; //Formatage text h m s
         }
-    }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
 
-    start(seconds){  // Nouveau décompte
-        this.seconds = seconds;
-    }
+        interval = setInterval(function(){ // permet de décrémenter le temps restant
+            if(this.seconds > 0){ 
+                this.seconds--; // décrémentation de 1 
+                this.show(); // lancement méthode show. 
+            }
+        }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
+
+        demarrer(seconds){  // Nouveau décompte
+            this.seconds = seconds;
+            document.getElementById("containerCanvas").style.display = "none";
+        }
+        stopCompteur () {
+            // Arrêt du compte à rebours
+            clearInterval();  
+            // display none section inscription/canvas 
+            document.getElementById("inscription").style.display = "none"; 
+            // affichage section message annulation 
+            document.getElementById("annulationReservation").querySelector("strong").style.display = "block";  
+
+            document.getElementById("annulationReservation").style.color = "red"; // style text rouge message annulation . 
+
+        }
+        annulerCompteur() {
+            // Fait apparaître le message de confirmation de la suppression
+            document.getElementById("annulationReservation").style.display = "block";
+            // Le message disparaît au bout de  15 secondes
+            setTimeout(function() {
+                document.getElementById("annulationReservation").style.display = "none";
+            }, 15000); // au bout de 15 seconde section reservation display none
+    
+            // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
+            this.stopCompteur();
+        }      
+    
 }
 
 let compteur = new Compteur();  // on initialise un nouveau compteur
 
 document.getElementById('boutonValider').addEventListener('click', function(){  // au click sur le bouton
-    compteur.start(1200); // on initialise un nouveau décompte
+    document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
+    compteur.demarrer(1200); // on initialise un nouveau décompte
+});
+// Evénement lors du clique sur le bouton d'annulation d'une réservation
+document.getElementById("annulerCompteur").addEventListener("click", function() {
+    // Lance la méthode d'annulation
+    compteur.annulerCompteur();
 });

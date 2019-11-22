@@ -65,29 +65,31 @@
         <div class="button">
             <i id="cmd-pause" class="fa fa-pause"></i>
         </div>
-
     </section>
-    <div class="container-fluid pt-5">
-        <div class="conteneur row ">
-            <div id="leaflet" class="col-lg-9">
+
+    <section id="formulaire">
+        <div class="container-fluid pt-5">
+            <div class="conteneur row ">
+                <div id="leaflet" class="col-lg-9">
+                </div>
+                <div id="station" class="col-lg-3"> <!-- Cadre informations sur la station sélectionnée -->
+                    <h3>Information Station :</h3>
+                    <ul id="infostation">
+                        <li>Nom : <span id="station-name"></span></li>
+                        <li>Adresse : <span id="adresse-station"></span></li>
+                        <li>Etat : <span id="etat-station"></span></li>
+                        <li>Vélos disponibles : <span id="dispo"></span></li>
+                        <li>Capacité disponibles : <span id="capacity"></span></li>
+                    </ul>
+                    <!-- /Informations sur la station sélectionnée -->
+
+                    <div id="bouttonReserver"><button>Réserver</button></div> <!-- Bouton de réservation -->
+                </div> <!-- /Cadre informations sur la station sélectionnée -->
             </div>
-            <div id="station" class="col-lg-3"> <!-- Cadre informations sur la station sélectionnée -->
-                <h3>Information Station :</h3>
-                <ul id="infostation">
-                    <li>Nom : <span id="station-name"></span></li>
-                    <li>Adresse : <span id="adresse-station"></span></li>
-                    <li>Etat : <span id="etat-station"></span></li>
-                    <li>Vélos disponibles : <span id="dispo"></span></li>
-                    <li>Capacité disponibles : <span id="capacity"></span></li>
-                </ul>
-                <!-- /Informations sur la station sélectionnée -->
-
-                <div id="bouttonReserver"><button>Réserver</button></div> <!-- Bouton de réservation -->
-             </div> <!-- /Cadre informations sur la station sélectionnée -->
         </div>
-    </div>
+    </section>
 
-    <section id="inscription">
+    <section id="inscription" class="container pt-3">
         <div id="containerCanvas">
                 <p>Votre réservation de vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
                 <p>Adresse : <span><!-- insertion adresse station JS --> </span></p>
@@ -98,17 +100,34 @@
                     <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
                 </div>
         </div> <!--signature -->
-        <div id="compteur"></div>
-        <button id="annulerCompteur"></button>
+        
+        <div id="decompte"> 
+            <p>Vous avez reservé un vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
+            
+            <article id="reservation">
+                <p>Pour une durée de : <div id="compteur"></div></p> <!-- compteur de réservation -->
+            </article>
+
+            <div class="container pt-3">
+                <button id="annulerCompteur">Annuler</button> <!-- bouton d'annulation compteur -->
+            </div>
+
+        </div>
+    </section>
+
+    <section id="annulation">
+        <div class="text-center pt-5">
+                <div id="annulationReservation"> 
+                    <strong class="messageAnnulation">Réservation annulée !!!</strong> 
+                </div>
+        </div>
     </section>
 
    
-    <div class="container pt-5">
-    </div>
-
-
-    <span class="signature">2019 - WebAgency. Réalisé par Antoine Heidet.</span>
-
+    <!-- <div class="text-center pt-5">
+            <span class="signature">2019 - Mulhouse City Bike. Réalisé par Antoine Heidet.</span>
+    </div> -->
+    
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/station.js"></script>
