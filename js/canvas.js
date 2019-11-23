@@ -124,6 +124,6 @@ class Signature {
 let obj = new Signature();
 obj.evenements();
 
-document.getElementById("boutonEffacer").addEventListener("click", function() {
-    Signature.clearCanvas();
+let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {
+    obj.clearCanvas();
 });

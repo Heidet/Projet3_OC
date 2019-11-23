@@ -65,12 +65,12 @@ class Compteur {
 
 let compteur = new Compteur();  // on initialise un nouveau compteur
 
-document.getElementById('boutonValider').addEventListener('click', function(){  // au click sur le bouton
+const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
-});
-// Evénement lors du clique sur le bouton d'annulation d'une réservation
-document.getElementById("annulerCompteur").addEventListener("click", function() {
-    // Lance la méthode d'annulation
+ });
+
+ const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM
+     // Lance la méthode d'annulation
     compteur.annulerCompteur();
-});
+ });

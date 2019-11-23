@@ -126,6 +126,16 @@
 #infostation > li {
     margin: 10px auto;
 }
+.btn-reserver {
+    border: none;
+    background-color:#40ca3c;
+    border-bottom: 3px solid #44BB94;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+}
 /************************** Canvas ************************/ 
 #containerCanvas {
     margin: 20px auto;
@@ -153,7 +163,27 @@
 #compteur, p {
     margin-left: 10px;
 }
-/************************** annulation ************************/ 
+#boutonEffacer {
+    border: none;
+    background-color:#ca433c;
+    border-bottom: 3px solid#BB4A44;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+}
+#boutonValider {
+    border: none;
+    background-color:#40ca3c;
+    border-bottom: 3px solid #44BB94;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+}
+/************************** annulation réservation ************************/ 
 .messageAnnulation {
     display: none;
 }
