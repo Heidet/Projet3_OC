@@ -104,7 +104,7 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
                 document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
 
                 //document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
-
+                sessionStorage
                 //scroll page (x-coord,y-coord) pour scroll auto block signature 
                 window.scrollTo(0,1000);
             });
@@ -112,19 +112,4 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
     });
 });
 
-/*  let icon_vert = L.icon({
-    iconUrl: 'css/images/marker-icon.png',
-    iconSize: [25, 41], //taille icone
-    iconAnchor: [13, 41], // ou va la pointe 
-});
-let icon_rouge = L.icon({
-    iconUrl: 'css/images/marker-icon-rouge.png',
-    iconSize: [25, 41],
-    iconAnchor: [13, 41],
-});
-let icon_jaune = L.icon({
-    iconUrl: 'css/images/marker-jaune.png',
-    iconSize: [25, 41], //taille icone
-    iconAnchor: [13, 41],
-}); **/
 
