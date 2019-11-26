@@ -124,7 +124,7 @@
 }
 
 #infostation > li {
-    margin: 10px auto;
+    margin: 30px auto;
 }
 .btn-reserver {
     border: none;
@@ -135,6 +135,9 @@
     font-weight: bold;
     font-size: 20px;
     border-radius: 4px;
+} 
+#error {
+    display: none;
 }
 /************************** Canvas ************************/ 
 #containerCanvas {

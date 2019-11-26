@@ -26,4 +26,19 @@ class Formulaire {
 
         }
     }
+    dispoVelo () {
+        if (this.dispo > 0) {
+            document.getElementById("station").style.display = "block";    
+        } else if (this.dispo = 0) {
+            document.getElementById("station").style.display = "none";
+            document.getElementById("error").querySelector("p").style.display = "block";
+            document.getElementById("error").querySelector("p").style.color = "red";
+           
+        }
+        if (this.dispo  > 4) {
+            document.getElementById("dispo").style.color = "#40ca3c"; 
+        } else if (this.dispo <= 4) {
+            document.getElementById("dispo").style.color = "#FF8C00"; 
+        }
+    }
 };

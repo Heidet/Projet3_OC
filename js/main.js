@@ -90,6 +90,8 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
             );
             // Insertion des données dans le bloc
             station.showStation(); 
+            // Méthode booléen pour dispo vélo 
+            station.dispoVelo();
 
             document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function(){ // recupération button + add evenement click function 
                 // Insertion du nom de la station
