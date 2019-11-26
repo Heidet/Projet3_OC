@@ -63,8 +63,8 @@ class Compteur {
         }      
         sessionStorage() {
             sessionStorage.setItem("compteur", this.seconds);
+            //sessionStorage.setItem("station-name", ......);
         }
-    
 }
 
 let compteur = new Compteur();  // on initialise un nouveau compteur
@@ -74,6 +74,7 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
     //sessionStorage.setItem("compteur", this.seconds);
     compteur.sessionStorage();
+
  });
 
  const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 

@@ -81,13 +81,13 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
 
         let position = data['position']; // position callback 
         map.addMarker(position, () => {  //ajout marker
+            
+            // afficher le block contenant les infos et le bouton réserver. 
+            document.getElementById("station").style.display = "block";
             // Insertion des données dans l'objet "station"
             let station = new Formulaire (
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands 
             );
-            // afficher le block contenant les infos et le bouton réserver. 
-            document.getElementById("station").style.display = "block";
-
             // Insertion des données dans le bloc
             station.showStation(); 
 
@@ -96,20 +96,18 @@ const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse"
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
-
+            
                 document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
                 
                 document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-
+            
                 document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
-
+            
                 //document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
-                sessionStorage
                 //scroll page (x-coord,y-coord) pour scroll auto block signature 
                 window.scrollTo(0,1000);
-            });
+            });  
         });
     });
 });
-
 
