@@ -1,14 +1,14 @@
 
 ///** Const liste station, recupération données appel ajax **/
 class Formulaire {
-    constructor(name, address, status, available_bikes, available_bike_stands){
+    constructor(name, address, status, available_bikes, available_bike_stands) {
         this.nom = name;
         this.addresse = address;
         this.status = status;
         this.dispo = available_bikes;
         this.capacite = available_bike_stands;
     }
-    showStation ()  {
+    showStation() {
         if (this.status === "OPEN") {
             document.getElementById("station-name").innerHTML = this.nom;
             document.getElementById("adresse-station").innerHTML = this.addresse;
@@ -26,19 +26,19 @@ class Formulaire {
 
         }
     }
-    dispoVelo () {
+    dispoVelo() {
         if (this.dispo > 0) {
-            document.getElementById("station").style.display = "block";    
+            document.getElementById("station").style.display = "block";
         } else if (this.dispo = 0) {
             document.getElementById("station").style.display = "none";
             document.getElementById("error").querySelector("p").style.display = "block";
             document.getElementById("error").querySelector("p").style.color = "red";
-           
         }
-        if (this.dispo  > 4) {
-            document.getElementById("dispo").style.color = "#40ca3c"; 
+
+        if (this.dispo > 4) {
+            document.getElementById("dispo").style.color = "#40ca3c";
         } else if (this.dispo <= 4) {
-            document.getElementById("dispo").style.color = "#FF8C00"; 
+            document.getElementById("dispo").style.color = "#FF8C00";
         }
     }
 };

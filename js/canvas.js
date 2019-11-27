@@ -1,6 +1,6 @@
 class Signature {
     constructor() { //Paramètres du canvas
-        this.canvas = document.getElementById("signature"); 
+        this.canvas = document.getElementById("signature");
         this.ctx = this.canvas.getContext('2d');
         this.ctx.strokeStyle = '#000000';
         this.ctx.lineWidth = 3;
@@ -11,11 +11,11 @@ class Signature {
         };
         this.lastPosition = this.mousePosition;
         this.boutonEffacer = document.getElementById("boutonEffacer");
-        }
+    }
 
     //Gestion des événements 
     evenements() {
-        let self = this ;
+        let self = this;
         //Souris
         this.canvas.addEventListener("mousedown", function (e) {
             self.draw = true;
@@ -26,7 +26,7 @@ class Signature {
             self.mousePosition = self.getMposition(e);
             self.canvasResult()
         });
-        
+
         document.addEventListener("mouseup", function (e) {
             self.draw = false;
         });
@@ -54,7 +54,7 @@ class Signature {
 
         // Touchpad
         this.canvas.addEventListener("touchstart", function (e) {
-           self.mousePosition = self.getTposition(e);
+            self.mousePosition = self.getTposition(e);
             let touch = e.touches[0];
             let mouseEvent = new MouseEvent("mousedown", {
                 clientX: touch.clientX,

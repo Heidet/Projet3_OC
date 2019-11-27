@@ -6,14 +6,14 @@ class Compteur {
         show(){ // permet d'afficher en mode h:m:s les secondes restantes
             let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
 
-            if(h.length === 1){ // si la longeur de h ne possède que 1 unité 
-                h = '0' + h; // alors on rajoute un 0 avant h
+            if(h.length === 1){ 
+                h = '0' + h; 
             }
 
             let m = (Math.floor((this.seconds % 3600) / 60)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
 
-            if(m.length === 1){  // si longueur de m strictement égale à 1 alors 
-                m = '0' + m; // alors ajoute de 0 devant m . m deviens 0 + valeurs (m)
+            if(m.length === 1){  
+                m = '0' + m; 
             }
 
             let s = (this.seconds % 60).toString(); //
@@ -63,7 +63,7 @@ class Compteur {
         }      
         sessionStorage() {
             sessionStorage.setItem("compteur", this.seconds);
-            //sessionStorage.setItem("station-name", ......);
+            sessionStorage.setItem("station-name", JSON.parse());
         }
 }
 

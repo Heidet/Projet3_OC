@@ -1,5 +1,5 @@
 class Map {
-    constructor(longitude, latitude, zoom){
+    constructor(longitude, latitude, zoom) {
         this.instance = L.map('leaflet').setView([longitude, latitude], zoom);  /****coordonnée GPS Mulhouse + zoom*/
         let osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
@@ -7,9 +7,9 @@ class Map {
         });
         this.instance.addLayer(osmLayer);
     }
-    addMarker(position, onClick){
+    addMarker(position, onClick) {
         let marker = L.marker([position['lat'], position['lng']]); // intégration lat + lng sur maps . 
         marker.on('click', onClick, this);
         marker.addTo(this.instance);
-   }
+    }
 }

@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Mulhouse City Bike</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/MarkerCluster.css" />        
-    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />    
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
 
-    <header>  <!--header navbar-->
+    <header>
+        <!--header navbar-->
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Mulhouse City Bike</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
@@ -30,37 +35,38 @@
                         </li>
                     </ul>
                 </div>
-            </div>  
+            </div>
         </nav>
     </header>
-    <section id="slider"> <!-- bloc slider -->
+    <section id="slider">
+        <!-- bloc slider -->
         <div class="slide active">
-                <img src="img/slide1.jpg" alt="slide1">
+            <img src="img/slide1.jpg" alt="slide1">
             <div class="text-slider">
-                <h2>Bienvenue sur l'application Mulhouse City Bike</h2> 
+                <h2>Bienvenue sur l'application Mulhouse City Bike</h2>
             </div>
         </div>
 
         <div class="slide">
-                <img src="img/slide2.jpg" alt="slide2"> 
+            <img src="img/slide2.jpg" alt="slide2">
             <div class="text-slider">
-                <h2>Location de vélos en temps réel sur Mulhouse</h2> 
+                <h2>Location de vélos en temps réel sur Mulhouse</h2>
             </div>
         </div>
 
         <div class="slide">
-                <img src="img/slide3.jpg" alt="slide3"> 
+            <img src="img/slide3.jpg" alt="slide3">
             <div class="text-slider">
-                <h2>Trouver votre vélo sur la carte et remplissez le formulaire étapes par étapes</h2> 
+                <h2>Trouver votre vélo sur la carte et remplissez le formulaire étapes par étapes</h2>
             </div>
         </div>
 
         <div id="conteneur-diapo">
-                <div id="commandes">
-                    <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
-                    <a id="cmd-right" class="next" href="#" title="avancer"><span class="chevron"></span></a>
-                </div>
-                <div id="diaporama"></div>
+            <div id="commandes">
+                <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
+                <a id="cmd-right" class="next" href="#" title="avancer"><span class="chevron"></span></a>
+            </div>
+            <div id="diaporama"></div>
         </div>
         <div class="button">
             <i id="cmd-pause" class="fa fa-pause"></i>
@@ -72,9 +78,10 @@
             <div class="conteneur row ">
                 <div id="leaflet" class="col-lg-9">
                 </div>
-                <div id="station" class="col-lg-3 pt-5"> <!-- Cadre informations sur la station sélectionnée -->
+                <div id="station" class="col-lg-3 pt-5">
+                    <!-- Cadre informations sur la station sélectionnée -->
                     <h3 class="titre-form text-center">Information Station :</h3>
-                    <ul id="infostation" class="pt-3"> 
+                    <ul id="infostation" class="pt-3">
                         <li>Nom : <span id="station-name"></span></li>
                         <li>Adresse : <span id="adresse-station"></span></li>
                         <li>Etat : <span id="etat-station"></span></li>
@@ -82,7 +89,8 @@
                         <li>Capacité disponibles : <span id="capacity"></span></li>
                     </ul>
                     <!-- /Informations sur la station sélectionnée -->
-                    <div id="bouttonReserver" class="reserver pt-5 text-center"><button class="btn-reserver">Réserver</button></div> <!-- Bouton de réservation -->
+                    <div id="bouttonReserver" class="reserver pt-5 text-center"><button
+                            class="btn-reserver">Réserver</button></div> <!-- Bouton de réservation -->
                 </div> <!-- /Cadre informations sur la station sélectionnée -->
                 <div id="error" class="col-lg-3 pt-5">
                     <p>Désoler aucun vélo n'est disponible pour cette emplacement. :( </p>
@@ -93,22 +101,28 @@
 
     <section id="inscription" class="container pt-3">
         <div id="containerCanvas" class="text-center">
-                <p>Votre réservation de vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
-                <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
+            <p>Votre réservation de vélo à la station : <strong>
+                    <!-- insertion nom de station JS --> </strong></p>
+            <p>Adresse : <strong><span>
+                        <!-- insertion adresse station JS --> </span></strong></p>
 
-                <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
-                <div id="boutonCanvas">
-                    <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
-                    <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
-                </div>
-        </div> <!--signature -->
-        
-        <div id="decompte"> 
-            <p>Vous avez reservé un vélo à la station : <strong> <!-- insertion nom de station JS --> </strong></p>
-            <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
-            
+            <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
+            <div id="boutonCanvas">
+                <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
+                <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
+            </div>
+        </div>
+        <!--signature -->
+
+        <div id="decompte">
+            <p>Vous avez reservé un vélo à la station : <strong>
+                    <!-- insertion nom de station JS --> </strong></p>
+            <p>Adresse : <strong><span>
+                        <!-- insertion adresse station JS --> </span></strong></p>
+
             <article id="reservation">
-                <p>Pour une durée de : <div id="compteur"></div></p> <!-- compteur de réservation -->
+                <p>Pour une durée de : <div id="compteur"></div>
+                </p> <!-- compteur de réservation -->
             </article>
 
             <div class="container pt-3">
@@ -120,17 +134,17 @@
 
     <section id="annulation">
         <div class="text-center pt-5">
-                <div id="annulationReservation"> 
-                    <strong class="messageAnnulation">Réservation annulée !!!</strong> 
-                </div>
+            <div id="annulationReservation">
+                <strong class="messageAnnulation">Réservation annulée !!!</strong>
+            </div>
         </div>
     </section>
 
-   
+
     <!-- <div class="text-center pt-5">
             <span class="signature">2019 - Mulhouse City Bike. Réalisé par Antoine Heidet.</span>
     </div> -->
-    
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/station.js"></script>
@@ -141,6 +155,7 @@
     <script src="js/map.js"></script>
     <script src="js/main.js"></script>
     <script src="js/canvas.js"></script>
-    <script src="js/reservation.js"></script>
+    <script src="js/compteur.js"></script>
 </body>
+
 </html>
