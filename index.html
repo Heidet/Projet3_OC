@@ -117,11 +117,12 @@
     <section>   
             <div id="inscription" class="container pt-3">
                 <div id="containerCanvas" class="text-center">
-                    <p>Votre réservation de vélo à la station : <strong>
-                            <!-- insertion nom de station JS --> </strong></p>
-                    <p>Adresse : <strong><span>
-                                <!-- insertion adresse station JS --> </span></strong></p>
-
+                    <p>Votre réservation de vélo à la station : <strong><span><!-- insertion nom de station JS --></span></strong></p>
+                    <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
+                            <div>
+                                <input type="text" id="prenom_utilisateur" placeholder="prenom" />
+                                <input type="text" id="nom_utilisateur" placeholder="nom" />
+                            </div>
                     <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
                     <div id="boutonCanvas">
                         <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
@@ -130,10 +131,8 @@
                 </div>
                 <!--signature -->
                 <div id="decompte">     
-                    <p>Vous avez reservé un vélo à la station : <strong>
-                            <!-- insertion nom de station JS --> </strong></p>
-                    <p>Adresse : <strong><span>
-                                <!-- insertion adresse station JS --> </span></strong></p>
+                    <p>Vous avez reservé un vélo à la station : <strong id="station-canvas"><!-- insertion nom de station JS --> </strong></p>
+                    <p>Adresse : <strong id="adresse-canvas"><span><!-- insertion adresse station JS --> </span></strong></p>
 
                     <article id="reservation">
                         <p>Pour une durée de : <div id="compteur"></div>

@@ -29,7 +29,6 @@ class Compteur {
         if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
             this.seconds--; // décrémentation de 1 
             sessionStorage.setItem("compteur", this.seconds);
-            sessionStorage.setItem("station-name", JSON.stringify(compteur));
             this.show(); // lancement méthode show compteur 
         }
     }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
@@ -62,14 +61,10 @@ class Compteur {
         // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
         this.stopCompteur();
     }
-    /*sessionStorage() {
-        sessionStorage.setItem("compteur", this.seconds);
-        //sessionStorage.setItem("station-name", JSON.stringify(this.station));
-    }*/
 }
 
 let compteur = new Compteur();  // on initialise un nouveau compteur JSON.parse(sessionStorage.getItem("ma donnée"))
-
+     
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
