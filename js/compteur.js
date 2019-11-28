@@ -72,6 +72,7 @@ let compteur = new Compteur();  // on initialise un nouveau compteur JSON.parse(
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
+    document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
     //compteur.sessionStorage();
 

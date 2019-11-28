@@ -116,6 +116,7 @@ body{
 #separation {
     margin-bottom: 0px!important;
     font-size: 20px;
+    color: white; 
 }
 #leaflet {
     height: 550px; 
@@ -160,6 +161,14 @@ body{
     display: inline-block;
 }
 /************************** compteur ************************/ 
+#nav_decompte{
+    display: none;
+}
+#separation_2 {
+    margin-bottom: 0px!important;
+    font-size: 20px;
+    color: white; 
+}
 #decompte {
     display: none;
     text-align: center;

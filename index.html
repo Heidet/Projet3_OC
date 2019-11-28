@@ -73,13 +73,13 @@
         </div>
     </section>
         <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <p id="separation">Vous pouvez réserver votre vélo ici.</p>
+            <div class="container-fluid mt-1 mb-1">
+                <p id="separation">Vous pouvez réserver votre vélo ici </p>
             </div>
         </nav>
 
     <section id="formulaire">
-        <div class="container-fluid pt-5">
+        <div class="container-fluid">
             <div class="conteneur row ">
                 <div id="leaflet" class="col-lg-9"></div>
                 <div id="message_selection" class="col-lg-3 pt-5">
@@ -106,37 +106,46 @@
         </div>
     </section>
 
-    <section id="inscription" class="container pt-3">
-        <div id="containerCanvas" class="text-center">
-            <p>Votre réservation de vélo à la station : <strong>
-                    <!-- insertion nom de station JS --> </strong></p>
-            <p>Adresse : <strong><span>
-                        <!-- insertion adresse station JS --> </span></strong></p>
-
-            <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
-            <div id="boutonCanvas">
-                <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
-                <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
+    <section>
+        <nav id="nav_decompte" class="navbar navbar-dark bg-dark">
+            <div class="container-fluid mt-1 mb-1">
+                <p id="separation_2">Votre réservation en cours :</p>
             </div>
-        </div>
-        <!--signature -->
+        </nav>
+    </section>
 
-        <div id="decompte">
-            <p>Vous avez reservé un vélo à la station : <strong>
-                    <!-- insertion nom de station JS --> </strong></p>
-            <p>Adresse : <strong><span>
-                        <!-- insertion adresse station JS --> </span></strong></p>
+    <section>   
+            <div id="inscription" class="container pt-3">
+                <div id="containerCanvas" class="text-center">
+                    <p>Votre réservation de vélo à la station : <strong>
+                            <!-- insertion nom de station JS --> </strong></p>
+                    <p>Adresse : <strong><span>
+                                <!-- insertion adresse station JS --> </span></strong></p>
 
-            <article id="reservation">
-                <p>Pour une durée de : <div id="compteur"></div>
-                </p> <!-- compteur de réservation -->
-            </article>
+                    <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
+                    <div id="boutonCanvas">
+                        <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
+                        <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
+                    </div>
+                </div>
+                <!--signature -->
+                <div id="decompte">     
+                    <p>Vous avez reservé un vélo à la station : <strong>
+                            <!-- insertion nom de station JS --> </strong></p>
+                    <p>Adresse : <strong><span>
+                                <!-- insertion adresse station JS --> </span></strong></p>
 
-            <div class="container pt-3">
-                <button id="annulerCompteur">Annuler</button> <!-- bouton d'annulation compteur -->
+                    <article id="reservation">
+                        <p>Pour une durée de : <div id="compteur"></div>
+                        </p> <!-- compteur de réservation -->
+                    </article>
+
+                    <div class="container pt-3">
+                        <button id="annulerCompteur">Annuler</button> <!-- bouton d'annulation compteur -->
+                    </div>
+
+                </div>
             </div>
-
-        </div>
     </section>
 
     <section id="annulation">
