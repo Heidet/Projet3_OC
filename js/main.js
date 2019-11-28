@@ -83,7 +83,8 @@ api.getStations(function (datas) {
         map.addMarker(position, () => {  //ajout marker
 
             // afficher le block contenant les infos et le bouton réserver. 
-            document.getElementById("station").style.display = "block";
+            $('#station').show();
+            $('#message_selection').hide();
             // Insertion des données dans l'objet "station"
             let station = new Formulaire(
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands

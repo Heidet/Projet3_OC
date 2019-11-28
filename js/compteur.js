@@ -1,7 +1,7 @@
 class Compteur {
     constructor() {// objet compteur
         this.seconds = 0; // secondes du compteur
-        //this.station = JSON.parse; //attribue station pour stockage 
+        this.station = null; //attribue station pour stockage 
     }
     show() { // permet d'afficher en mode h:m:s les secondes restantes
         let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
@@ -29,6 +29,7 @@ class Compteur {
         if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
             this.seconds--; // décrémentation de 1 
             sessionStorage.setItem("compteur", this.seconds);
+            sessionStorage.setItem("station-name", JSON.stringify(compteur));
             this.show(); // lancement méthode show compteur 
         }
     }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
@@ -61,19 +62,18 @@ class Compteur {
         // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
         this.stopCompteur();
     }
-    sessionStorage() {
+    /*sessionStorage() {
         sessionStorage.setItem("compteur", this.seconds);
-        //sessionStorage.setItem("station-name", ..);
-    }
+        //sessionStorage.setItem("station-name", JSON.stringify(this.station));
+    }*/
 }
 
-let compteur = new Compteur();  // on initialise un nouveau compteur
+let compteur = new Compteur();  // on initialise un nouveau compteur JSON.parse(sessionStorage.getItem("ma donnée"))
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
-    //sessionStorage.setItem("compteur", this.seconds);
-    compteur.sessionStorage();
+    //compteur.sessionStorage();
 
 });
 

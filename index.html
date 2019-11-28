@@ -72,11 +72,18 @@
             <i id="cmd-pause" class="fa fa-pause"></i>
         </div>
     </section>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <p id="separation">Vous pouvez réserver votre vélo ici.</p>
+            </div>
+        </nav>
 
     <section id="formulaire">
         <div class="container-fluid pt-5">
             <div class="conteneur row ">
-                <div id="leaflet" class="col-lg-9">
+                <div id="leaflet" class="col-lg-9"></div>
+                <div id="message_selection" class="col-lg-3 pt-5">
+                    <p>Veuillez selectionner une station pour la réservation.</p>
                 </div>
                 <div id="station" class="col-lg-3 pt-5">
                     <!-- Cadre informations sur la station sélectionnée -->
@@ -89,7 +96,8 @@
                         <li>Capacité disponibles : <span id="capacity"></span></li>
                     </ul>
                     <!-- /Informations sur la station sélectionnée -->
-                    <div id="bouttonReserver" class="reserver pt-5 text-center"><button class="btn-reserver">Réserver</button></div> <!-- Bouton de réservation -->
+                    <div id="bouttonReserver" class="reserver pt-5 text-center"><button
+                            class="btn-reserver">Réserver</button></div> <!-- Bouton de réservation -->
                 </div> <!-- /Cadre informations sur la station sélectionnée -->
                 <div id="error" class="col-lg-3 pt-5">
                     <p>Désoler aucun vélo n'est disponible pour cette emplacement. :( </p>
@@ -134,7 +142,7 @@
     <section id="annulation">
         <div class="text-center pt-5">
             <div id="annulationReservation">
-                <strong class="messageAnnulation">Réservation annulée !!!</strong>
+                <strong class="messageAnnulation mb-5">Réservation annulée !!!</strong>
             </div>
         </div>
     </section>

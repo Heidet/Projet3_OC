@@ -27,9 +27,9 @@ class Formulaire {
         }
     }
     dispoVelo() {
-        if (this.dispo > 0) {
+       if (this.dispo > 0) {
             $('#station').show();
-        } else if (this.dispo = 0) {
+        }else if (this.dispo > 0) {
             $('#station').hide();
             $('#error > p ').show();
             $('#error > p ').css( "color", "red");
