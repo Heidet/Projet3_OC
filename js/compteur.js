@@ -28,8 +28,8 @@ class Compteur {
     interval = setInterval(function () { // permet de décrémenter le temps restant
         if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
             this.seconds--; // décrémentation de 1 
-            sessionStorage.setItem("compteur", this.seconds);
             this.show(); // lancement méthode show compteur 
+            sessionStorage.setItem("compteur", this.seconds);
         }
     }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
 
@@ -40,8 +40,6 @@ class Compteur {
     stopCompteur() {
         // Arrêt du compte à rebours
         clearInterval();
-        // Supprimer toutes les données de sessionStorage
-        sessionStorage.clear();
         // display none section inscription/canvas 
         document.getElementById("inscription").style.display = "none";
         // affichage section message annulation 
@@ -57,23 +55,10 @@ class Compteur {
         setTimeout(function () {
             document.getElementById("annulationReservation").style.display = "none";
         }, 15000); // au bout de 15 seconde section reservation display none
-
+        sessionStorage.clear();
         // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
         this.stopCompteur();
     }
+    // Méthode qui vérifie si une réservation est en cours au lancement de la page et lors du rafraîchissement
 }
 
-let compteur = new Compteur();  // on initialise un nouveau compteur JSON.parse(sessionStorage.getItem("ma donnée"))
-     
-const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
-    document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
-    document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
-    compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
-    //compteur.sessionStorage();
-
-});
-
-const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
-    // Lance la méthode d'annulation
-    compteur.annulerCompteur();
-});
