@@ -72,6 +72,7 @@ window.onload = (function () {  // Exécute une fonction anonyme au chargement d
     });
 });
 
+
 class GenericButton {
     constructor(elt, onClick){
         this.elt = elt;
@@ -102,11 +103,7 @@ class PauseButton extends GenericButton {
             }
             this.elt.classList.add('fa-' + content); // add class fa plus contenu 
         }.bind(this)); // call back this soit objet 
-        /*
-        while (this.elt.classList.length > 0){
-            this.elt.classList.remove(this.elt.classList.item(0));
-        }
-        this.elt.classList.add('fa').add('fa-' + content);
-        */
     }
 }
+
+

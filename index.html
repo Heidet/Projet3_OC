@@ -109,7 +109,7 @@
     <section>
         <nav id="nav_decompte" class="navbar navbar-dark bg-dark">
             <div class="container-fluid mt-1 mb-1">
-                <p id="separation_2">Votre réservation en cours :</p>""
+                <p id="separation_2">Votre réservation en cours :</p>
             </div>
         </nav>
     </section>
@@ -119,15 +119,18 @@
                 <div id="containerCanvas" class="text-center">
                     <p>Votre réservation de vélo à la station : <strong><span><!-- insertion nom de station JS --></span></strong></p>
                     <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
-                            <form>
-                                <input type="text" id="prenom_utilisateur" name ="prenom" placeholder="prenom" required/>
-                                <input type="text" id="nom_utilisateur" name="nom" placeholder="nom" required/>
-                            </form>
-                    <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
-                    <div id="boutonCanvas">
-                        <p><button id="boutonValider">Valider</button></p> <!-- Bouton Valider -->
-                        <p><button id="boutonEffacer">Effacer</button></p> <!-- Bouton Effacer -->
-                    </div>
+                    <form>
+                            <input type="text" id="prenom_utilisateur" placeholder="prenom" />
+                            <input type="text" id="nom_utilisateur" placeholder="nom" />
+                            <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
+                    
+                        <!--<div id="boutonCanvas">-->
+                            <!-- <button id="boutonValider">Valider</button> <-- Bouton Valider --> 
+                            <!-- <button id="boutonEffacer">Effacer</button> <-- Bouton Effacer -->
+                            <input type="button" id="boutonValider" name="boutonValider" value="Envoyer">
+                            <input type="button" id="boutonEffacer" name="boutonEffacer" value="Annuler">
+                      <!-- </div>-->
+                    </form>
                 </div>
                 <!--signature -->
                 <div id="decompte">     
@@ -168,9 +171,8 @@
     <script src="js/ajax.js"></script>
     <script src="js/map.js"></script>
     <script src="js/compteur.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/canvas.js"></script>
-    
+    <script src="js/main.js"></script>
 </body>
 
 </html>

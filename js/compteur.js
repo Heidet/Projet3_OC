@@ -28,18 +28,21 @@ class Compteur {
     interval = setInterval(function () { // permet de décrémenter le temps restant
         if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
             this.seconds--; // décrémentation de 1 
-            this.show(); // lancement méthode show compteur 
             sessionStorage.setItem("compteur", this.seconds);
+            this.show(); // lancement méthode show compteur 
         }
     }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
 
     demarrer(seconds) {  // Nouveau décompte
         this.seconds = seconds;
-        document.getElementById("containerCanvas").style.display = "none";
+        document.getElementById("containerCanvas").style.display = "none"; 
     }
     stopCompteur() {
         // Arrêt du compte à rebours
-        clearInterval();
+        //clearInterval();
+        this.seconds = 0;
+        // Supprimer toutes les données de sessionStorage
+         sessionStorage.clear();
         // display none section inscription/canvas 
         document.getElementById("inscription").style.display = "none";
         // affichage section message annulation 
@@ -54,11 +57,9 @@ class Compteur {
         // Le message disparaît au bout de  15 secondes
         setTimeout(function () {
             document.getElementById("annulationReservation").style.display = "none";
-        }, 15000); // au bout de 15 seconde section reservation display none
-        sessionStorage.clear();
+        }, 8000); // au bout de 8 seconde section reservation display none
         // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
         this.stopCompteur();
     }
-    // Méthode qui vérifie si une réservation est en cours au lancement de la page et lors du rafraîchissement
 }
 

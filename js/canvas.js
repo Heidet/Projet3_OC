@@ -122,7 +122,7 @@ class Signature {
     }
 }
 let obj = new Signature();
-    obj.evenements();
+obj.evenements();
 
 let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {
     obj.clearCanvas();

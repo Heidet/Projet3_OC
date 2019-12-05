@@ -21,39 +21,33 @@ api.getStations(function (datas) {
 
             document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function () { // recupération button + add evenement click function 
                 // Insertion du nom de la station
+                document.getElementById("inscription").style.display = "block";
+                document.getElementById("annulationReservation").style.display = "none";
+                document.getElementById("decompte").style.display = "none";
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
-
-                sessionStorage.setItem('station-canvas', data.name);
-
+                sessionStorage.setItem('station', data.name);
                 document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
-
                 document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-
                 document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
+                window.scrollTo(0, 1000);//scroll page (x-coord,y-coord) pour scroll auto block signature  
 
-                //document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
-                //scroll page (x-coord,y-coord) pour scroll auto block signature 
-                window.scrollTo(0, 1000);
             });
         });
     });
 });
 
-let compteur = new Compteur(); // on initialise un nouveau compteur JSON.parse(sessionStorage.getItem("ma donnée"))
+let compteur = new Compteur();
 
-
- const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
-  // on initialise un nouveau compteur JSON.parse(sessionStorage.getItem("ma donnée"))
+const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
-    compteur.demarrer(1200);
+    compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
+    sessionStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
+    sessionStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
 });
 
-
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
-    //sLance la méthode d'annulation
-    compteur.annulerCompteur();
-    sessionStorage.clear();
+    compteur.annulerCompteur(); // Lance la méthode d'annulation
+    sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
 });
