@@ -131,17 +131,7 @@ body{
 }
 #station, #error {
     display: none;
-}
-.btn-reserver {
-    border: none;
-    background-color:#40ca3c;
-    border-bottom: 3px solid #44BB94;
-    padding: 2px 15px;
-    color:white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 4px;
-}
+} 
 #message_selection {
     font-size: 55px;
     color: green;
@@ -158,14 +148,43 @@ body{
     background-color: white;
     margin-top: 10px;
 }
-#boutonCanvas p {
-    display: inline-block;
-}
 #nom_utilisateur, #prenom_utilisateur {
     border-radius: 7px;
     border: none;
     padding-left: 12px;
     padding-bottom: 3px;
+}
+#boutonEffacer, #annulerCompteur {
+    border: none;
+    background-color:#f44336;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#boutonEffacer:hover, #annulerCompteur:hover {
+    background-color: #f44336;
+    box-shadow: inset 0 36px 0 0#6f0c05;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#boutonValider, .btn-reserver {
+    border: none;
+    background-color:#40ca3c;
+    padding: 2px 15px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#boutonValider:hover, .btn-reserver:hover {
+    background-color: #40ca3c;
+    box-shadow: inset 0 36px 0 0 #088c1d;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 /************************** compteur ************************/ 
 #nav_decompte{
@@ -188,40 +207,10 @@ body{
 #compteur, p {
     margin-left: 10px;
 }
-#boutonEffacer {
-    border: none;
-    background-color:#ca433c;
-    border-bottom: 3px solid#BB4A44;
-    padding: 2px 15px;
-    color:white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 4px;
-}
-#boutonValider {
-    border: none;
-    background-color:#40ca3c;
-    border-bottom: 3px solid #44BB94;
-    padding: 2px 15px;
-    color:white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 4px;
-}
 /************************** annulation réservation ************************/ 
 .messageAnnulation {
     display: none;
     font-size: 25px;
-}
-#annulerCompteur {
-    border: none;
-    background-color:#ca433c;
-    border-bottom: 3px solid#BB4A44;
-    padding: 2px 15px;
-    color:white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 4px;
 }
 /************************** signature ************************/ 
 .signature {

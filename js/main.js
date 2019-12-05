@@ -50,4 +50,13 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
     compteur.annulerCompteur(); // Lance la méthode d'annulation
     sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
+    obj.clearCanvas();
+});
+
+let obj = new Signature();
+obj.evenements();
+
+
+let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {
+    obj.clearCanvas();
 });

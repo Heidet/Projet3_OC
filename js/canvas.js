@@ -121,9 +121,3 @@ class Signature {
         this.ctx.lineWidth = 3;
     }
 }
-let obj = new Signature();
-obj.evenements();
-
-let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {
-    obj.clearCanvas();
-});
