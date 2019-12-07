@@ -26,7 +26,11 @@ api.getStations(function (datas) {
                 document.getElementById("decompte").style.display = "none";
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
+                document.getElementById("containerCanvas").querySelector("strong").style.color = '#c40404';
+                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';  
                 sessionStorage.setItem('station', data.name);
+                sessionStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
+                sessionStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
                 document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
                 document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
@@ -41,10 +45,8 @@ let compteur = new Compteur();
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
-    document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
+    //document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
-    sessionStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
-    sessionStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
 });
 
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 

@@ -139,7 +139,7 @@ body{
     display: none;
 } 
 #message_selection {
-    font-size: 55px;
+    font-size: 45px;
     color: green;
 }
 /************************** Canvas ************************/ 
@@ -159,6 +159,7 @@ body{
     border: none;
     padding-left: 12px;
     padding-bottom: 3px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 #boutonEffacer, #annulerCompteur {
     border: none;
@@ -193,9 +194,6 @@ body{
     transition: all 0.5s ease-in-out;
 }
 /************************** compteur ************************/ 
-#nav_decompte{
-    display: none;
-}
 #separation_2 {
     margin-bottom: 0px!important;
     font-size: 25px;

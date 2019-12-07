@@ -9,7 +9,7 @@ class Formulaire {
         this.capacite = available_bike_stands;
     }
     showStation() {
-        if (this.status === "OPEN") {            
+        if (this.status === "OPEN") {
             $('#station-name').text(this.nom);
             $('#adresse-station').text(this.addresse);
             $('#etat-station').text(this.status);
@@ -21,25 +21,23 @@ class Formulaire {
             $('#etat-station').color("red");
             $('#station-name').text(this.nom);
             $('#adresse-station').text(this.addresse);
-            $('#dispo').text("0") ;
+            $('#dispo').text("0");
             $('#capacity').text("0");
-
         }
     }
     dispoVelo() {
-       if (this.dispo > 0) {
+        if (this.dispo > 0) {
             $('#station').show();
-        }else if (this.dispo > 0) {
+        } else if (this.dispo = 0) {
             $('#station').hide();
             $('#error > p ').show();
-            $('#error > p ').css( "color", "red");
-            
+            $('#error > p ').css("color", "red");
         }
 
         if (this.dispo > 4) {
             $('#dispo').css("color", "#40ca3c");
         } else if (this.dispo <= 4) {
-            $('#dispo').css ("color", "#FF8C00");
+            $('#dispo').css("color", "#FF8C00");
         }
     }
 };
