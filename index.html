@@ -123,16 +123,13 @@
                     <p>Votre réservation de vélo à la station : <strong><span><!-- insertion nom de station JS --></span></strong></p>
                     <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
                     <form class="formulaire_reservation">
-                            <p>Votre prénom : <input type="text" id="prenom_utilisateur" placeholder="prenom" /></p>
-                            <p>Votre nom : <input type="text" id="nom_utilisateur" placeholder="nom" /></p>
+                            <p>Votre prénom : <input type="text" id="prenom_utilisateur" placeholder="prenom" required/></p>
+                            <p>Votre nom : <input type="text" id="nom_utilisateur" placeholder="nom" required/></p>
                             <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
                     
-                        <!--<div id="boutonCanvas">-->
-                            <!-- <button id="boutonValider">Valider</button> <-- Bouton Valider --> 
-                            <!-- <button id="boutonEffacer">Effacer</button> <-- Bouton Effacer -->
+                        
                             <input type="button" id="boutonValider" name="boutonValider" value="Envoyer">
                             <input type="button" id="boutonEffacer" name="boutonEffacer" value="Effacer">
-                      <!-- </div>-->
                     </form>
                 </div>
                 <!--signature -->

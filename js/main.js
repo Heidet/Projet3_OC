@@ -21,21 +21,15 @@ api.getStations(function (datas) {
 
             document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function () { // recupération button + add evenement click function 
                 // Insertion du nom de la station
-                document.getElementById("inscription").style.display = "block";
-                document.getElementById("annulationReservation").style.display = "none";
-                document.getElementById("decompte").style.display = "none";
-                document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-                document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
-                document.getElementById("containerCanvas").querySelector("strong").style.color = '#c40404';
-                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';  
+                station.affichageSection(); // affichage diverse section avec methode affichage dans station . 
                 sessionStorage.setItem('station', data.name);
                 sessionStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
                 sessionStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
-                document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
                 document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-                document.getElementById("decompte").querySelector("span").innerHTML = data.address; // ajout information stations à l'événement click du bouton reserver 
-                window.scrollTo(0, 1000);//scroll page (x-coord,y-coord) pour scroll auto block signature  
-
+                document.getElementById("decompte").querySelector("span").innerHTML = data.address;
+                document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
+                document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
+                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';  
             });
         });
     });

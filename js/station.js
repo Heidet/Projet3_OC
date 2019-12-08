@@ -40,4 +40,13 @@ class Formulaire {
             $('#dispo').css("color", "#FF8C00");
         }
     }
+    affichageSection(){
+                document.getElementById("inscription").style.display = "block";
+                document.getElementById("annulationReservation").style.display = "none";
+                document.getElementById("decompte").style.display = "none";
+                document.getElementById("containerCanvas").querySelector("strong").style.color = '#c40404';
+                //document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';  
+                document.getElementById("containerCanvas").style.display = "block"; // block du conteneur canvas à l'evenement click du bouton reserver 
+                window.scrollTo(0, 1100);//scroll page (x-coord,y-coord) pour scroll auto block signature  
+    }
 };
