@@ -1,7 +1,12 @@
 body{
     background-color: grey;
 }
+/************************navbar***************************/
+.nav-link {
+    font-size: 20px;
+}
 /************************Slider***************************/
+
 #slider {
     position: relative;
     width: 100%;
@@ -141,6 +146,14 @@ body{
 #message_selection {
     font-size: 45px;
     color: green;
+}
+.fa-mouse-pointer {
+    margin-left: 40%;
+    font-size: 80px!important;
+}
+#message_selection > p {
+    margin-top: 10%;
+    text-align: center;
 }
 /************************** Canvas ************************/ 
 #containerCanvas {

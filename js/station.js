@@ -15,6 +15,7 @@ class Formulaire {
             $('#etat-station').text(this.status);
             $('#dispo').text(this.dispo);
             $('#capacity').text(this.capacite);
+            $('#etat-station').css("color", "#40ca3c");
 
         } else if (this.status === "CLOSED") {
             $('#etat-station').text("Station fermée !!");
