@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mulhouse City Bike</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/MarkerCluster.css" />
@@ -13,74 +14,75 @@
 </head>
 
 <body>
+    <section id="slider">
+        <header>
+            <!--header navbar-->
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <!-- <i class="fa fa-biking"></i> -->
+                <div class="container-fluid">
+                    <i class="fa fa-bicycle"></i>
+                    <a class="navbar-brand pl-3" href="#">Mulhouse City Bike</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-    <header>
-        <!--header navbar-->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-           <!-- <i class="fa fa-biking"></i> -->
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Mulhouse City Bike</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i>Accueil <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#formulaire"><i class="fa fa-map-marker"></i>Map</a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#"><i class="fa fa-home"></i>Accueil <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#formulaire"><i class="fa fa-map-marker"></i>Map</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+            <!-- bloc slider -->
+            <div class="slide active">
+                <img src="img/slide1.jpg" alt="slide1">
+                <div class="text-slider">
+                    <h2>Bienvenue sur l'application Mulhouse City Bike</h2>
                 </div>
             </div>
-        </nav>
-    </header>
-    <section id="slider">
-        <!-- bloc slider -->
-        <div class="slide active">
-            <img src="img/slide1.jpg" alt="slide1">
-            <div class="text-slider">
-                <h2>Bienvenue sur l'application Mulhouse City Bike</h2>
-            </div>
-        </div>
 
-        <div class="slide">
-            <img src="img/slide2.jpg" alt="slide2">
-            <div class="text-slider">
-                <h2>Location de vélos en temps réel sur Mulhouse</h2>
+            <div class="slide">
+                <img src="img/slide2.jpg" alt="slide2">
+                <div class="text-slider">
+                    <h2>Location de vélos en temps réel sur Mulhouse</h2>
+                </div>
             </div>
-        </div>
 
-        <div class="slide">
-            <img src="img/slide3.jpg" alt="slide3">
-            <div class="text-slider">
-                <h2>Trouver votre vélo sur la carte et remplissez le formulaire étapes par étapes</h2>
+            <div class="slide">
+                <img src="img/slide3.jpg" alt="slide3">
+                <div class="text-slider">
+                    <h2>Trouver votre vélo sur la carte et remplissez le formulaire étapes par étapes</h2>
+                </div>
             </div>
-        </div>
 
-        <div id="conteneur-diapo">
-            <div id="commandes">
-                <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
-                <a id="cmd-right" class="next" href="#" title="avancer"><span class="chevron"></span></a>
+            <div id="conteneur-diapo">
+                <div id="commandes">
+                    <a id="cmd-left" class="previous" href="#" title="reculer"><span class="chevron"></span></a>
+                    <a id="cmd-right" class="next" href="#" title="avancer"><span class="chevron"></span></a>
+                </div>
+                <div id="diaporama"></div>
             </div>
-            <div id="diaporama"></div>
-        </div>
-        <div class="button">
-            <i id="cmd-pause" class="fa fa-pause"></i>
-        </div>
+            <div class="button">
+                <i id="cmd-pause" class="fa fa-pause"></i>
+            </div>
     </section>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid mt-2 mb-2">
-                <p id="separation">Vous pouvez réserver votre vélo ici : </p>
-                <i class="fa fa-bicycle"></i>
-            </div>
-        </nav>
 
     <section id="formulaire">
+            <nav class="navbar navbar-dark bg-dark">
+                    <div class="container-fluid mt-2 mb-2">
+                        <p id="separation">Vous pouvez réserver votre vélo ici : </p>
+                       <i class="fa fa-map"></i>
+                    </div>
+                </nav>
         <div class="container-fluid">
             <div class="conteneur row ">
                 <div id="leaflet" class="col-lg-9"></div>
@@ -118,19 +120,19 @@
         </nav>
     </section>
 
-    <section>   
+    <section id="section_reservation">   
             <div id="inscription" class="container pt-3">
                 <div id="containerCanvas" class="text-center">
                     <p>Votre réservation de vélo à la station : <strong><span><!-- insertion nom de station JS --></span></strong></p>
                     <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
-                    <form class="formulaire_reservation">
-                            <p>Votre prénom : <input type="text" id="prenom_utilisateur" placeholder="prenom" required/></p>
-                            <p>Votre nom : <input type="text" id="nom_utilisateur" placeholder="nom" required/></p>
+                    <form name="form_0" class="formulaire_reservation">
+                            <p>Votre prénom : <input type="text" name="prenom "id="prenom_utilisateur" placeholder="prenom" required/></p>
+                            <p>Votre nom : <input type="text" name="nom" id="nom_utilisateur" placeholder="nom" required/></p>
                             <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
                     
                         
-                            <input type="button" id="boutonValider" name="boutonValider" value="Envoyer">
-                            <input type="button" id="boutonEffacer" name="boutonEffacer" value="Effacer">
+                            <input type="submit" id="boutonValider" name="submit" value="Envoyer">
+                            <input type="button" id="boutonEffacer" name="reset" value="Effacer">
                     </form>
                 </div>
                 <!--signature -->

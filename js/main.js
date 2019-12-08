@@ -29,7 +29,7 @@ api.getStations(function (datas) {
                 document.getElementById("decompte").querySelector("span").innerHTML = data.address;
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
-                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';  
+                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
             });
         });
     });
