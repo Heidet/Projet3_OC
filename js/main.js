@@ -38,6 +38,15 @@ api.getStations(function (datas) {
 let compteur = new Compteur();
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
+    //condition si valeurs non entrée dans input
+    if (document.getElementById('prenom_utilisateur').value === "") {
+        alert("Veuillez entrer votre prénom !");
+        return false;
+    };
+    if (document.getElementById('nom_utilisateur').value === "") {
+        alert("Veuillez entrer votre nom !");
+        return false;
+    };
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     //document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
@@ -48,6 +57,7 @@ const annuler = new GenericButton(document.getElementById('annulerCompteur'), fu
     sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
     obj.clearCanvas();
 });
+
 
 let obj = new Signature();
 obj.evenements();

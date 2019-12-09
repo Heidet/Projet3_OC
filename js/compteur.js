@@ -35,14 +35,14 @@ class Compteur {
 
     demarrer(seconds) {  // Nouveau décompte
         this.seconds = seconds;
-        document.getElementById("containerCanvas").style.display = "none"; 
+        document.getElementById("containerCanvas").style.display = "none";
     }
     stopCompteur() {
         // Arrêt du compte à rebours
         //clearInterval();
         this.seconds = 0;
         // Supprimer toutes les données de sessionStorage
-         sessionStorage.clear();
+        sessionStorage.clear();
         // display none section inscription/canvas 
         document.getElementById("inscription").style.display = "none";
         // affichage section message annulation 

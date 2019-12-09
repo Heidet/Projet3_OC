@@ -244,6 +244,7 @@ body{
 .signature {
     text-align: center!important; 
 }
+/************************** médias queries ************************/ 
 @media screen and (max-width: 600px)
 {
     .fa-info-circle{
