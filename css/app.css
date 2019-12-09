@@ -61,8 +61,7 @@ body{
     align-items: center;
     position: absolute;
     z-index: 1;
-    height: 88px;
-    top: 260px;
+    margin-top: 50%
 }
 .chevron {
     content: '';

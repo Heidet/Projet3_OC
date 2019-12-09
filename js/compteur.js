@@ -1,9 +1,24 @@
 class Compteur {
     constructor() {// objet compteur
-        this.seconds = 0; // secondes du compteur
+        const reservationDate = sessionStorage.getItem('reservationDate', null) 
+        this.seconds = 0;
+        if (reservationDate){
+            this.seconds = 20*60 - Math.floor((new Date - new Date(reservationDate) ) /1000)
+                }
+        
         this.station = null; //attribue station pour stockage 
+        this.interval = setInterval(function () { // permet de décrémenter le temps restant
+            if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
+                this.seconds--; // décrémentation de 1 
+                sessionStorage.setItem("compteur", this.seconds);
+                this.show(JSON.parse(sessionStorage.getItem('reservation', '{}' ))); // lancement méthode show compteur 
+            }
+        }.bind(this), 1000); // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
+        this.show(JSON.parse(sessionStorage.getItem('reservation', '{}' )));
     }
-    show() { // permet d'afficher en mode h:m:s les secondes restantes
+    show(data = {} ) { // permet d'afficher en mode h:m:s les secondes restantes
+    if(this.seconds === 0) return  // si seconds egale à 0 alors return 
+
         let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
 
         if (h.length === 1) {
@@ -18,20 +33,17 @@ class Compteur {
 
         let s = (this.seconds % 60).toString(); //
 
+
         if (s.length === 1) {
             s = '0' + s;
         }
 
         document.getElementById('compteur').innerText = h + ':' + m + ':' + s; //Formatage text h m s
-    }
-
-    interval = setInterval(function () { // permet de décrémenter le temps restant
-        if (this.seconds > 0) { // si objet seconde supérieur à 0 alors -->>>>
-            this.seconds--; // décrémentation de 1 
-            sessionStorage.setItem("compteur", this.seconds);
-            this.show(); // lancement méthode show compteur 
-        }
-    }.bind(this), 1000);  // pour permettre dans la fonction du setinterval d'accéder à l'attribut seconds depuis this
+        document.getElementById('decompte').style.display = 'block'; 
+        document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
+        document.getElementById("decompte").querySelector("span").innerHTML = data.address;
+       
+    } 
 
     demarrer(seconds) {  // Nouveau décompte
         this.seconds = seconds;

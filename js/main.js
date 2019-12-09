@@ -1,19 +1,27 @@
 const map = new Map(47.7475, 7.3375, 14)
 const api = new ApiClient("b83d4fd83439b86791f32b1d4ee5e1c23a820009", "mulhouse");
+let compteur = new Compteur();
 api.getStations(function (datas) {
     datas = JSON.parse(datas); // transformer le JSON en objet
     datas.forEach(function (data) { // parcourir objet appel function callback data 
 
         let position = data['position']; // position callback 
         map.addMarker(position, () => {  //ajout marker
-
             // afficher le block contenant les infos et le bouton réserver. 
+            if ((data.available_bikes === 0) || (data.status != "OPEN")) {
+                icon = "css/images/marker-icon-rouge.png";
+            } else if ((data.available_bikes > 0) && (data.available_bikes < 4)) {
+                icon = "css/images/marker-icon-jaune.png";
+            } else {
+                icon = "css/images/marker-icon.png";
+            };
             $('#station').show();
             $('#message_selection').hide();
             // Insertion des données dans l'objet "station"
             let station = new Formulaire(
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands
             );
+            
             // Insertion des données dans le bloc
             station.showStation();
             // Méthode booléen pour dispo vélo 
@@ -21,12 +29,13 @@ api.getStations(function (datas) {
 
             document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function () { // recupération button + add evenement click function 
                 // Insertion du nom de la station
+                compteur.show(data);
                 station.affichageSection(); // affichage diverse section avec methode affichage dans station . 
+                sessionStorage.setItem('reservationDate', new Date);
                 sessionStorage.setItem('station', data.name);
-                sessionStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
-                sessionStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
-                document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-                document.getElementById("decompte").querySelector("span").innerHTML = data.address;
+                localStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
+                localStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
+                sessionStorage.setItem('reservation', JSON.stringify(data));
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
                 document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
@@ -34,8 +43,6 @@ api.getStations(function (datas) {
         });
     });
 });
-
-let compteur = new Compteur();
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     //condition si valeurs non entrée dans input
