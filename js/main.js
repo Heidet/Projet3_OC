@@ -33,16 +33,19 @@ api.getStations(function (datas) {
                 station.affichageSection(); // affichage diverse section avec methode affichage dans station . 
                 sessionStorage.setItem('reservationDate', new Date);
                 sessionStorage.setItem('station', data.name);
-                localStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
-                localStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
                 sessionStorage.setItem('reservation', JSON.stringify(data));
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
                 document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
+                document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
+                document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
             });
         });
     });
 });
+
+let signature = new Signature();
+signature.evenements();
 
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     //condition si valeurs non entrée dans input
@@ -54,6 +57,13 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
         alert("Veuillez entrer votre nom !");
         return false;
     };
+    if (document.getElementById('signature').value === '') {
+        alert("Veuillez entrer votre nom !");// Message en cas de canvas vide
+    } 
+    
+    
+    localStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
+    localStorage.setItem('nom', document.getElementById("nom_utilisateur").value)
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     //document.getElementById("nav_decompte").style.display = "block"; // on affiche la section decompte &
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
@@ -62,14 +72,9 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
     compteur.annulerCompteur(); // Lance la méthode d'annulation
     sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
-    obj.clearCanvas();
+    signature.clearCanvas();
 });
 
-
-let obj = new Signature();
-obj.evenements();
-
-
 let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {
-    obj.clearCanvas();
+    signature.clearCanvas();
 });
