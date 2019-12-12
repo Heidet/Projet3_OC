@@ -29,15 +29,38 @@ body{
 .slide.active {
     display: block;
 }
-.text-slider {
+.text-slider1{
     padding: 15px 15px 15px 15px;
     background: rgba(0,0,0,.5);
     position: absolute;
-    top: 30%;
-    left: 15%;
+    top: 16%;
+    left: 10px;
     color: white;
     box-shadow: 2px 2px 8px 1px rgba(255,255,255,.25);
     border-radius: 13px;
+}
+.text-slider2 {
+    padding: 15px 15px 15px 15px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    color: white;
+    box-shadow: 2px 2px 8px 1px rgba(255,255,255,.25);
+    border-radius: 13px;
+}
+.text-slider3 {
+    padding: 15px 15px 15px 15px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    color: white;
+    box-shadow: 2px 2px 8px 1px rgba(255,255,255,.25);
+    border-radius: 13px;
+}
+.etape1, .etape2, .etape3 {
+    color: red;
 }
 #cmd-right {
     right: -1.5em;
