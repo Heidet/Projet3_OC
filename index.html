@@ -16,31 +16,31 @@
 <body>
     <section id="slider">
         <header>
-            <!--header navbar-->
-            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-            <!-- <i class="fa fa-biking"></i> -->
-                <div class="container-fluid">
-                    <i class="fa fa-bicycle"></i>
-                    <a class="navbar-brand pl-3" href="#">Mulhouse City Bike</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#"><i class="fa fa-home"></i>Accueil <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#formulaire"><i class="fa fa-map-marker"></i>Map</a>
-                            </li>
-                        </ul>
+                <!--header navbar-->
+                <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+                <!-- <i class="fa fa-biking"></i> -->
+                    <div class="container-fluid">
+                        <i class="fa fa-bicycle"></i>
+                        <a class="navbar-brand pl-3" href="#">Mulhouse City Bike</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Accueil <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#formulaire"><i class="fa fa-map-marker"></i>Map</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
         
             <!-- bloc slider -->
             <div class="slide active">
@@ -87,7 +87,7 @@
             <div class="conteneur row ">
                 <div id="leaflet" class="col-lg-9"></div>
                 <div id="message_selection" class="col-lg-3 pt-5">
-                    <i class="fa fa-mouse-pointer"></i>
+                    <i class="fa fa-map-marker"></i>
                     <p>Veuillez selectionner une station pour la réservation.</p>
                 </div>
                 <div id="station" class="col-lg-3 pt-5">
@@ -131,8 +131,8 @@
                             <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
                     
                         
-                            <input type="submit" id="boutonValider" name="submit" value="Envoyer">
-                            <input type="button" id="boutonEffacer" name="reset" value="Effacer">
+                            <input type="submit" id="boutonValider" class="btn_valide" name="submit" value="Envoyer">
+                            <input type="submit" id="boutonEffacer" class="btn_reset" name="reset" value="Effacer">
                     </form>
                 </div>
                 <!--signature -->
@@ -146,7 +146,7 @@
                     </article>
 
                     <div class="container pt-3">
-                        <button id="annulerCompteur">Annuler</button> <!-- bouton d'annulation compteur -->
+                        <button id="annulerCompteur" class="annuleRebour">Annuler</button> <!-- bouton d'annulation compteur -->
                     </div>
 
                 </div>

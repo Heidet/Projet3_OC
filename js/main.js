@@ -38,7 +38,7 @@ api.getStations(function (datas) {
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
                 document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
                 document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
-                document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
+                document.getElementById('nom_utilisateur').value = localStorage.getItem('nom'); 
             });
         });
     });
@@ -50,18 +50,13 @@ signature.evenements();
 const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     //condition si valeurs non entrée dans input
     if (document.getElementById('prenom_utilisateur').value === "") {
-        alert("Veuillez entrer votre prénom !");
+        //alert("Veuillez entrer votre prénom !");
         return false;
     };
     if (document.getElementById('nom_utilisateur').value === "") {
-        alert("Veuillez entrer votre nom !");
+        //alert("Veuillez entrer votre nom !");
         return false;
-    };
-    if (document.getElementById('signature').value === '') {
-        alert("Veuillez entrer votre nom !");// Message en cas de canvas vide
-    } 
-    
-    
+    };   
     localStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
     localStorage.setItem('nom', document.getElementById("nom_utilisateur").value)
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &

@@ -148,8 +148,8 @@ body{
     font-size: 45px;
     color: rgb(64, 202, 60);
 }
-.fa-mouse-pointer {
-    margin-left: 40%;
+#message_selection > .fa-map-marker {
+    margin-left: 45%;
     font-size: 80px!important;
 }
 #message_selection > p {
@@ -242,6 +242,9 @@ body{
 /************************** signature ************************/ 
 .signature {
     text-align: center!important; 
+}
+.previous, .next, .fa-pause, .btn-reserver, .btn_valide, .btn_reset, .annuleRebour {
+    cursor: pointer;
 }
 /************************** médias queries ************************/ 
 @media screen and (max-width: 600px)
