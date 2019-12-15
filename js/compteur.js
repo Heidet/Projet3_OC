@@ -17,7 +17,7 @@ class Compteur {
         this.show(JSON.parse(sessionStorage.getItem('reservation', '{}' )));
     }
     show(data = {} ) { // permet d'afficher en mode h:m:s les secondes restantes
-    if(this.seconds === 0) return  // si seconds egale à 0 alors return 
+        if(this.seconds === 0) return  // si seconds egale à 0 alors return
 
         let h = (Math.floor(this.seconds / 3600)).toString(); //La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x
 
@@ -31,7 +31,7 @@ class Compteur {
             m = '0' + m;
         }
 
-        let s = (this.seconds % 60).toString(); //
+        let s = (this.seconds % 60).toString(); //œ
 
 
         if (s.length === 1) {
@@ -42,7 +42,8 @@ class Compteur {
         document.getElementById('decompte').style.display = 'block'; 
         document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
         document.getElementById("decompte").querySelector("span").innerHTML = data.address;
-       
+        document.getElementById("decompte").querySelector("strong").style.color = '#f44336';
+        document.getElementById("decompte").querySelector("span").style.color = '#f44336';
     } 
 
     demarrer(seconds) {  // Nouveau décompte

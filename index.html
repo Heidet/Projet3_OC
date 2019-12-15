@@ -127,15 +127,13 @@
                 <div id="containerCanvas" class="text-center">
                     <p>Votre réservation de vélo à la station : <strong><span><!-- insertion nom de station JS --></span></strong></p>
                     <p>Adresse : <strong><span><!-- insertion adresse station JS --> </span></strong></p>
-                    <form name="form_0" class="formulaire_reservation">
-                            <p>Votre prénom : <input type="text" name="prenom" id="prenom_utilisateur" placeholder="prenom"  required/></p>
-                            <p>Votre nom : <input type="text" name="nom" id="nom_utilisateur" placeholder="nom"  required/></p>
-                            <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
-                    
-                        
-                            <input type="submit" id="boutonValider" class="btn_valide" name="submit" value="Envoyer">
-                            <input type="submit" id="boutonEffacer" class="btn_reset" name="reset" value="Effacer">
-                    </form>
+                    <p>Votre prénom : <input type="text" name="prenom" id="prenom_utilisateur" placeholder="prenom"  required/></p>
+                    <p>Votre nom : <input type="text" name="nom" id="nom_utilisateur" placeholder="nom"  required/></p>
+                    <canvas id="signature" width="380" height="200"></canvas> <!-- Canvas -->
+
+
+                    <button id="boutonValider" class="btn_valide" name="submit">Envoyer</button>
+                    <button id="boutonEffacer" class="btn_reset" name="reset">Effacer</button>
                 </div>
                 <!--signature -->
                 <div id="decompte">     
