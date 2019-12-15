@@ -16,32 +16,13 @@
 
 ### 🏠 [Homepage](http://projet3.projetoc-aheidet.com/)
 
-### ✨ [Demo](http://projet3.projetoc-aheide)
+### ✨ [Demo](http://projet3.projetoc-aheidet.com/)
 
-## Install
-
-```sh
-Null
-```
-
-## Usage
-
-```sh
-Null
-```
-
-## Run tests
-
-```sh
-Null
-```
 
 ## Author
 
 👤 **Antoine Heidet**
 
-* Website: Null
-* Twitter: [@Null](https://twitter.com/Null)
 * Github: [@https:\/\/github.com\/Heidet\/](https://github.com/https:\/\/github.com\/Heidet\/)
 * LinkedIn: [@https:\/\/www.linkedin.com\/in\/antoine-heidet-4b6099168\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/antoine-heidet-4b6099168\/)
 
@@ -49,18 +30,8 @@ Null
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Heidet/Projet3_OC/issues). You can also take a look at the [contributing guide](Null).
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-<a href="https://www.patreon.com/Null">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
 
 ## 📝 License
 
 Copyright © 2019 [Antoine Heidet](https://github.com/https:\/\/github.com\/Heidet\/).<br />
 This project is [Null](Null) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
