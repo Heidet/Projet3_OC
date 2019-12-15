@@ -11,13 +11,13 @@ api.getStations(function (datas) {
         let position = data['position']; // position callback 
         map.addMarker(position, () => {  //ajout marker
             // afficher le block contenant les infos et le bouton réserver. 
-            if ((data.available_bikes === 0) || (data.status != "OPEN")) {
+            /**if ((data.available_bikes === 0) || (data.status != "OPEN")) {
                 icon = "css/images/marker-icon-rouge.png";
             } else if ((data.available_bikes > 0) && (data.available_bikes < 4)) {
                 icon = "css/images/marker-icon-jaune.png";
             } else {
                 icon = "css/images/marker-icon.png";
-            };
+            };**/
             $('#station').show();
             $('#message_selection').hide();
             // Insertion des données dans l'objet "station"
@@ -37,9 +37,8 @@ api.getStations(function (datas) {
                 document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
                 document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
                 document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
-
                 current_station = data;
-
+                window.scrollTo(0,1000);
             });
         });
     });
@@ -77,6 +76,7 @@ const annuler = new GenericButton(document.getElementById('annulerCompteur'), fu
     compteur.annulerCompteur(); // Lance la méthode d'annulation
     sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
     signature.clearCanvas();
+
 });
 
 let effacer = new GenericButton(document.getElementById("boutonEffacer"), function () {

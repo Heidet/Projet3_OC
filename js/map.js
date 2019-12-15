@@ -7,8 +7,8 @@ class Map {
         });
         this.instance.addLayer(osmLayer);
     }
-    addMarker(position, onClick, icon) {
-        let marker = L.marker([position['lat'], position['lng'], icon]); // intégration lat + lng sur maps . 
+    addMarker(position, onClick) {
+        let marker = L.marker([position['lat'], position['lng']]); // intégration lat + lng sur maps . 
         marker.on('click', onClick, this);
         marker.addTo(this.instance);
     }

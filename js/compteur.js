@@ -60,9 +60,7 @@ class Compteur {
         document.getElementById("inscription").style.display = "none";
         // affichage section message annulation 
         document.getElementById("annulationReservation").querySelector("strong").style.display = "block";
-
         document.getElementById("annulationReservation").style.color = "red"; // style text rouge message annulation . 
-
     }
     annulerCompteur() {
         // Fait apparaître le message de confirmation de la suppression
