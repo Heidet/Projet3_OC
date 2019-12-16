@@ -58,15 +58,12 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
         //alert("Veuillez entrer votre nom !");
         return false;
     }
-
     localStorage.setItem('prenom', document.getElementById("prenom_utilisateur").value);
     localStorage.setItem('nom', document.getElementById("nom_utilisateur").value);
-
     document.getElementById("decompte").style.display = "block"; // on affiche la section decompte &
     sessionStorage.setItem('reservationDate', new Date);
     sessionStorage.setItem('station', current_station.name);
     sessionStorage.setItem('reservation', JSON.stringify(current_station));
-
     compteur.show(current_station);
 
     compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
