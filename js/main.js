@@ -11,13 +11,6 @@ api.getStations(function (datas) {
         let position = data['position']; // position callback 
         map.addMarker(position, () => {  //ajout marker
             // afficher le block contenant les infos et le bouton réserver. 
-            /**if ((data.available_bikes === 0) || (data.status != "OPEN")) {
-                icon = "css/images/marker-icon-rouge.png";
-            } else if ((data.available_bikes > 0) && (data.available_bikes < 4)) {
-                icon = "css/images/marker-icon-jaune.png";
-            } else {
-                icon = "css/images/marker-icon.png";
-            };**/
             $('#station').show();
             $('#message_selection').hide();
             // Insertion des données dans l'objet "station"

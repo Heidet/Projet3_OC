@@ -14,9 +14,9 @@
 
 > Vous devez développer une page de type &#34;Single page Application&#34; simulant la réservation de vélos dans une ville. Ces vélos sont répartis dans de nombreuses stations dans la ville. L'utilisateur doit pouvoir réserver un vélo depuis son navigateur (à condition qu'il reste des vélos disponibles à la station !). La réservation est alors temporairement enregistrée sur le navigateur du visiteur.
 
-### 🏠 [Homepage](http://projet3.projetoc-aheidet.com/) http://projet3.projetoc-aheidet.com/
+### 🏠 [Homepage](http://projet3.projetoc-aheidet.com/)
 
-### ✨ [Demo](http://projet3.projetoc-aheidet.com/) http://projet3.projetoc-aheidet.com/
+### ✨ [Demo](http://projet3.projetoc-aheidet.com/)
 
 
 ## Author
