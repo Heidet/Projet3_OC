@@ -43,36 +43,3 @@ class Diapo {
             }, 5000); // setTime 5 secondes 
         }
     }
-
-    const key = document.addEventListener("keydown", function (e) {
-        if (e.keyCode === 37) {
-            diapo.next(); //fonction diapo et méthode next au keycode 37 
-        }
-        else if (e.keyCode === 39) {
-            diapo.previous(); //fonction diapo et méthode previous au keycode 39
-        }
-    });
-
-     // appel objet et méthode autoplay 
-
-    const left_button = new GenericButton(document.getElementById('cmd-left'), function () { // création variable bouton et attribution de son ID dans le DOM
-        diapo.previous();
-    });
-
-    const right_button = new GenericButton(document.getElementById('cmd-right'), function () { // création variable bouton et attribution de son ID dans le DOM
-        diapo.next();
-    });
-    const pause_button = new PauseButton(document.getElementById('cmd-pause'), function () {
-        diapo.playing = !diapo.playing; // Toogle la valeur = négation de la valeur ( false=true  true=false)
-        if (diapo.playing) {  // si playing vrai alors pause
-            this.setClass("pause");
-        }
-        else {
-            this.setClass("play");
-        }
-    });
-
-
-
-const diapo = new Diapo(); 
-diapo.autoplay();

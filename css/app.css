@@ -206,6 +206,12 @@ body{
     padding-bottom: 3px;
     border: 2px solid rgba(0, 0, 0, 0.2);
 }
+#nom_utilisateur:invalid , #prenom_utilisateur:invalid {
+    border-color: red; 
+}
+#nom_utilisateur:valid , #prenom_utilisateur:valid {
+    border-color: #40ca3c;
+}
 #boutonEffacer, #annulerCompteur {
     border: none;
     background-color:#f44336;
@@ -272,6 +278,16 @@ body{
 /************************** médias queries ************************/ 
 @media screen and (max-width: 600px)
 {
+    .diapo {
+        display: none;
+    }
+    #slider {
+        width: 100%;
+        height: 0;
+    }
+    #leaflet {
+        height: 400px;
+    }
     .fa-info-circle{
         font-size: 20px!important;
     } 

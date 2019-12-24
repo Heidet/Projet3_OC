@@ -17,25 +17,55 @@ api.getStations(function (datas) {
             let station = new Formulaire(
                 data.name, data.address, data.status, data.available_bikes, data.available_bike_stands
             );
-            
+
             // Insertion des données dans le bloc
             station.showStation();
             // Méthode booléen pour dispo vélo 
             station.dispoVelo();
 
-            document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", function () { // recupération button + add evenement click function 
+            document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", () => { // recupération button + add evenement click function 
                 station.affichageSection(); // affichage diverse section avec methode affichage dans station . 
                 document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
                 document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
-                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404'; 
+                document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';
                 document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
                 document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
                 current_station = data;
-                window.scrollTo(0,1000);
+                window.scrollTo(0, 1000);
             });
         });
     });
 });
+
+const key = document.addEventListener("keydown", function (e) {
+    if (e.keyCode === 37) {
+        diapo.next(); //fonction diapo et méthode next au keycode 37 
+    }
+    else if (e.keyCode === 39) {
+        diapo.previous(); //fonction diapo et méthode previous au keycode 39
+    }
+});
+
+const left_button = new GenericButton(document.getElementById('cmd-left'), function () { // création variable bouton et attribution de son ID dans le DOM
+    diapo.previous();
+});
+
+const right_button = new GenericButton(document.getElementById('cmd-right'), function () { // création variable bouton et attribution de son ID dans le DOM
+    diapo.next();
+});
+const pause_button = new PauseButton(document.getElementById('cmd-pause'), function () {
+    diapo.playing = !diapo.playing; // Toogle la valeur = négation de la valeur ( false=true  true=false)
+    if (diapo.playing) {  // si playing vrai alors pause
+        this.setClass("pause");
+    }
+    else {
+        this.setClass("play");
+    }
+});
+
+const diapo = new Diapo();  // appel objet et méthode autoplay 
+diapo.autoplay();
+
 
 let signature = new Signature();
 signature.evenements();
