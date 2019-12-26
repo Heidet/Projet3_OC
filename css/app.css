@@ -269,9 +269,6 @@ body{
     font-size: 25px;
 }
 /************************** signature ************************/ 
-.signature {
-    text-align: center!important; 
-}
 .previous, .next, .fa-pause, .btn-reserver, .btn_valide, .btn_reset, .annuleRebour {
     cursor: pointer;
 }

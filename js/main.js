@@ -70,7 +70,7 @@ diapo.autoplay();
 let signature = new Signature();
 signature.evenements();
 
-const boutonValider = new GenericButton(document.getElementById('boutonValider'), function (event) { // création variable bouton et attribution de son ID dans le DOM
+const boutonValider = new GenericButton(document.getElementById('boutonValider'), function () { // création variable bouton et attribution de son ID dans le DOM
     //condition si valeurs non entrée dans input
     if (document.getElementById('prenom_utilisateur').value === "") {
         //alert("Veuillez entrer votre prénom !");
@@ -89,7 +89,7 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
     sessionStorage.setItem('reservation', JSON.stringify(current_station));
     compteur.show(current_station);
 
-    compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
+    compteur.demarrer(10); // on initialise un nouveau décompte 1200 seconde = 20 minute 
 });
 
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 

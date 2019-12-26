@@ -1,6 +1,5 @@
 class Diapo {
-    constructor () {  // Exécute une fonction anonyme au chargement de la page (en gros le code dont ont à besoin)
-     // objet diapo 
+    constructor () {  // Exécute une fonction anonyme au chargement de la page (en gros le code dont ont à besoin) 
         this.playing =  true }
         slides () {
             return document.getElementsByClassName('slide') // retour les éléments class slide du DOM
