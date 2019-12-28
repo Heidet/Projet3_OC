@@ -44,9 +44,12 @@ class Compteur {
             document.getElementById('decompte').style.display = 'block';
             document.getElementById("decompte").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
             document.getElementById("decompte").querySelector("span").innerHTML = data.address;
+            document.getElementById("decompte").querySelector("strong").style.display = '#c40404';
+            document.getElementById("decompte").querySelector("span").style.display = '#c40404';
         }
 
         else if (this.seconds === 0) {
+            //console.log('expiration')
             document.getElementById('compteur').innerText = 'Réservation expirée';
             setTimeout(function () {
                 document.getElementById('section_reservation').style.display = 'none';

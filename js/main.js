@@ -25,9 +25,10 @@ api.getStations(function (datas) {
 
             document.getElementById("bouttonReserver").querySelector("button").addEventListener("click", () => { // recupération button + add evenement click function 
                 station.affichageSection(); // affichage diverse section avec methode affichage dans station . 
-                document.getElementById("containerCanvas").querySelector("strong").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
-                document.getElementById("containerCanvas").querySelector("span").innerHTML = data.address; // ajout information adresse .  
+                document.getElementById("containerCanvas").querySelector("span").innerHTML = data.name; // ajout information stations à l'événement click du bouton reserver 
+                document.getElementById("adresse").innerHTML = data.address; // ajout information adresse .  
                 document.getElementById("containerCanvas").querySelector("span").style.color = '#c40404';
+                document.getElementById("adresse").style.color = '#c40404';
                 document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
                 document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
                 current_station = data;
@@ -89,8 +90,7 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
     sessionStorage.setItem('station', current_station.name);
     sessionStorage.setItem('reservation', JSON.stringify(current_station));
     compteur.show(current_station);
-
-    compteur.demarrer(10); // on initialise un nouveau décompte 1200 seconde = 20 minute 
+    compteur.demarrer(1200); // on initialise un nouveau décompte 1200 seconde = 20 minute 
 });
 
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
