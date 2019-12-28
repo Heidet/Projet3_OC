@@ -46,40 +46,44 @@ class Compteur {
             document.getElementById("decompte").querySelector("span").innerHTML = data.address;
         }
 
-        else if (this.seconds === 0 ) {
+        else if (this.seconds === 0) {
             document.getElementById('compteur').innerText = 'Réservation expirée';
-        }
-    }
-
-        
-
-        demarrer(seconds) {  // Nouveau décompte
-            this.seconds = seconds;
-            document.getElementById("containerCanvas").style.display = "none";
-        }
-        stopCompteur() {
-            // Arrêt du compte à rebours
-            //clearInterval();
-            this.seconds = 0;
-            // Supprimer toutes les données de sessionStorage
-            sessionStorage.clear();
-            // display none section inscription/canvas 
-            document.getElementById("inscription").style.display = "none";
-            // affichage section message annulation 
-            document.getElementById("annulationReservation").querySelector("strong").style.display = "block";
-
-            document.getElementById("annulationReservation").style.color = "red"; // style text rouge message annulation . 
-
-        }
-        annulerCompteur() {
-            // Fait apparaître le message de confirmation de la suppression
-            document.getElementById("annulationReservation").style.display = "block";
-            // Le message disparaît au bout de  15 secondes
             setTimeout(function () {
-                document.getElementById("annulationReservation").style.display = "none";
-            }, 8000); // au bout de 8 seconde section reservation display none
-            // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
-            this.stopCompteur();
+                document.getElementById('section_reservation').style.display = 'none';
+            }, 8000);
+            sessionStorage.clear();
         }
     }
+
+
+
+    demarrer(seconds) {  // Nouveau décompte
+        this.seconds = seconds;
+        document.getElementById("containerCanvas").style.display = "none";
+    }
+    stopCompteur() {
+        // Arrêt du compte à rebours
+        //clearInterval();
+        this.seconds = 0;
+        // Supprimer toutes les données de sessionStorage
+        sessionStorage.clear();
+        // display none section inscription/canvas 
+        document.getElementById("inscription").style.display = "none";
+        // affichage section message annulation 
+        document.getElementById("annulationReservation").querySelector("strong").style.display = "block";
+
+        document.getElementById("annulationReservation").style.color = "red"; // style text rouge message annulation . 
+
+    }
+    annulerCompteur() {
+        // Fait apparaître le message de confirmation de la suppression
+        //document.getElementById("annulationReservation").style.display = "block";
+        // Le message disparaît au bout de  15 secondes
+        setTimeout(function () {
+            document.getElementById("annulationReservation").style.display = "none";
+        }, 8000); // au bout de 8 seconde section reservation display none
+        // Lance la méthode de fin d'une réservation afin de supprimer les sessions storage et arrêter le compte à rebours
+        this.stopCompteur();
+    }
+}
 

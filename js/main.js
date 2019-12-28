@@ -31,6 +31,7 @@ api.getStations(function (datas) {
                 document.getElementById('prenom_utilisateur').value = localStorage.getItem('prenom');
                 document.getElementById('nom_utilisateur').value = localStorage.getItem('nom');
                 current_station = data;
+                document.getElementById('section_reservation').style.display = 'block';
                 window.scrollTo(0, 1000);
             });
         });
@@ -93,6 +94,7 @@ const boutonValider = new GenericButton(document.getElementById('boutonValider')
 });
 
 const annuler = new GenericButton(document.getElementById('annulerCompteur'), function () { // création variable bouton et attribution de son ID dans le DOM 
+    document.getElementById("annulationReservation").style.display = "block";
     compteur.annulerCompteur(); // Lance la méthode d'annulation
     sessionStorage.clear(); // Supprimer toutes les données de sessionStorage
     signature.clearCanvas();
